@@ -3,20 +3,26 @@
 <!-- Navigation will be hidden from the navbar in mobile mode and moved to the settingsbar -->
 
 <script setup>
-const { VITE_APP_TITLE } = import.meta.env;
-import { computed } from "vue";
-import { useRoute } from "vue-router";
+import { computed, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import { useFullscreen } from "@vueuse/core";
 import { useAuthStore } from "../../../store/authStore";
 import { useDialogStore } from "../../../store/dialogStore";
+import LanguagePicker from "../../LanguagePicker.vue";
 
 import UserSettings from "../../dialogs/UserSettings.vue";
 import ContributorsList from "../../dialogs/ContributorsList.vue";
 
+const { VITE_APP_TITLE } = import.meta.env;
 const route = useRoute();
+const router = useRouter();
 const authStore = useAuthStore();
 const dialogStore = useDialogStore();
 const { isFullscreen, toggle } = useFullscreen();
+
+const showUserMenu = ref(false);
+
+const currentPath = computed(() => route.path);
 
 const linkQuery = computed(() => {
 	const { query } = route;
@@ -24,145 +30,91 @@ const linkQuery = computed(() => {
 	const cityQuery = query.city ? `&city=${query.city}` : '';
 	return `${indexQuery}${cityQuery}`;
 });
+
+const publicNavItems = [
+	{ name: "navigation.home", path: "/" },
+	{ name: "navigation.components", path: "/component" },
+];
+
+const privateNavItems = [
+	{ name: "navigation.favorites", path: "/dashboard" },
+	{ name: "navigation.publicDashboards", path: "/dashboard/public" },
+	{ name: "navigation.personalDashboards", path: "/dashboard/personal" },
+];
+
+function toggleUserMenu() {
+	showUserMenu.value = !showUserMenu.value;
+}
 </script>
 
 <template>
-  <div class="navbar">
-    <a href="/">
-      <div class="navbar-logo">
-        <div class="navbar-logo-image">
-          <img
-            src="../../../assets/images/TUIC.svg"
-            alt="tuic logo"
-          >
-        </div>
-        <div>
-          <h1>{{ VITE_APP_TITLE }}</h1>
-          <h2>Taipei City Dashboard</h2>
-        </div>
-      </div>
-    </a>
-    <div
-      v-if="
-        authStore.currentPath !== 'admin' &&
-          !(authStore.isMobileDevice && authStore.isNarrowDevice)
-      "
-      class="navbar-tabs"
-    >
-      <router-link
-        v-if="authStore.token"
-        :to="`/component`"
-        :class="{
-          'router-link-active':
-            authStore.currentPath.includes('component'),
-        }"
-      >
-        組件瀏覽平台
-      </router-link>
-      <router-link
-        :to="`/dashboard${
-          linkQuery.includes('undefined') ? '' : linkQuery
-        }`"
-      >
-        儀表板總覽
-      </router-link>
-      <router-link
-        :to="`/mapview${
-          linkQuery.includes('undefined') ? '' : linkQuery
-        }`"
-      >
-        地圖交叉比對
-      </router-link>
-    </div>
-    <div class="navbar-user">
-      <button
-        v-if="!(authStore.isMobileDevice && authStore.isNarrowDevice)"
-        class="hide-if-mobile"
-        @click="toggle"
-      >
-        <span>{{
-          isFullscreen ? "fullscreen_exit" : "fullscreen"
-        }}</span>
-      </button>
-      <div class="navbar-user-info">
-        <button><span>info</span></button>
-        <ul>
-          <li>
-            <a
-              href="https://tuic.gov.taipei/documentation"
-              target="_blank"
-              rel="noreferrer"
-            >技術文件</a>
-          </li>
-          <li>
-            <button
-              @click="dialogStore.showDialog('contributorsList')"
-            >
-              專案貢獻者
-            </button>
-          </li>
-        </ul>
-        <teleport to="body">
-          <ContributorsList />
-        </teleport>
-      </div>
-      <div
-        v-if="
-          authStore.token &&
-            !(authStore.isMobileDevice && authStore.isNarrowDevice)
-        "
-        class="navbar-user-user"
-      >
-        <button>
-          {{ authStore.user.name }}
-        </button>
-        <ul>
-          <li>
-            <button @click="dialogStore.showDialog('userSettings')">
-              用戶設定
-            </button>
-          </li>
-          <li
-            v-if="
-              authStore.currentPath !== 'admin' &&
-                authStore.user.is_admin
-            "
-            class="hide-if-mobile"
-          >
-            <router-link to="/admin">
-              管理員後臺
-            </router-link>
-          </li>
-          <li
-            v-else-if="authStore.user.is_admin"
-            class="hide-if-mobile"
-          >
-            <router-link to="/dashboard">
-              返回儀表板
-            </router-link>
-          </li>
-          <li>
-            <button @click="authStore.handleLogout">
-              登出
-            </button>
-          </li>
-        </ul>
-        <teleport to="body">
-          <user-settings />
-        </teleport>
-      </div>
-      <div
-        v-else-if="
-          !(authStore.isMobileDevice && authStore.isNarrowDevice)
-        "
-        class="navbar-user-user"
-      >
-        <button @click="dialogStore.showDialog('login')">
-          登入
-        </button>
-      </div>
-    </div>
-  </div>
+	<nav>
+		<div class="navbar-logo">
+			<router-link to="/">
+				<h2>{{ $t('navigation.dashboard') }}</h2>
+			</router-link>
+		</div>
+		<div class="navbar-links">
+			<router-link
+				v-for="item in publicNavItems"
+				:key="`${item.name}-${item.path}`"
+				:to="item.path"
+				:class="{ active: item.path === currentPath }"
+			>
+				{{ $t(item.name) }}
+			</router-link>
+			<div
+				v-if="authStore.token && authStore.user.is_whitelist"
+				class="navbar-user"
+			>
+				<button @click="toggleUserMenu">
+					<span>{{ authStore.user.user_name }}</span>
+					<span :class="{ active: showUserMenu }">expand_more</span>
+				</button>
+				<div v-if="showUserMenu" class="navbar-user-menu">
+					<router-link
+						v-for="item in privateNavItems"
+						:key="`${item.name}-${item.path}`"
+						:to="item.path"
+						:class="{ active: item.path === currentPath }"
+						@click="showUserMenu = false"
+					>
+						{{ $t(item.name) }}
+					</router-link>
+					<button
+						v-if="authStore.user.is_admin"
+						@click="
+							() => {
+								showUserMenu = false;
+								router.push('/admin');
+							}
+						"
+					>
+						{{ $t('navigation.admin') }}
+					</button>
+					<button
+						@click="
+							() => {
+								showUserMenu = false;
+								authStore.logOut();
+							}
+						"
+					>
+						{{ $t('navigation.logout') }}
+					</button>
+				</div>
+			</div>
+			<button
+				v-else-if="!authStore.token"
+				@click="authStore.showLoginForm"
+				class="navbar-login"
+			>
+				{{ $t('navigation.login') }}
+			</button>
+			<!-- Add Language Picker -->
+			<LanguagePicker />
+		</div>
+	</nav>
 </template>
 
 <style scoped lang="scss">
@@ -323,6 +275,29 @@ const linkQuery = computed(() => {
 			}
 			@media screen and (max-height: 500px) {
 				display: flex;
+			}
+		}
+	}
+
+	.navbar-links {
+		// ...existing styles...
+
+		// Add styling for language picker in navbar
+		:deep(.language-picker) {
+			margin-left: 1rem;
+
+			.language-select {
+				background: var(--color-border);
+				border: 1px solid var(--color-border-complement);
+				color: var(--color-complement-text);
+				padding: 0.25rem 0.5rem;
+				border-radius: 5px;
+				font-size: 0.9rem;
+
+				&:focus {
+					outline: none;
+					border-color: var(--color-highlight);
+				}
 			}
 		}
 	}
