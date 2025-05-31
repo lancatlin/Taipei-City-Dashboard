@@ -99,3 +99,126 @@ INSERT INTO public.component_charts
 VALUES
 ( 'fire_district_stats', '{#FFFF00}', '{DistrictChart}', '件');
 
+-- Query 
+-- 1) Compute each column's total in a subquery named "totals"
+-- 2) CROSS JOIN LATERAL (VALUES ...) to turn the columns into (x_axis, data) rows
+
+SELECT
+  x_axis,
+  data
+FROM (
+  SELECT
+    SUM(livingroom)  AS livingroom,
+    SUM(bedroom)     AS bedroom,
+    SUM(study)       AS study,
+    SUM(kitchen)     AS kitchen,
+    SUM(bathroom)    AS bathroom,
+    SUM(shrine)      AS shrine,
+    SUM(balcony)     AS balcony,
+    SUM(courtyard)   AS courtyard,
+    SUM(restaurant)  AS restaurant
+  FROM fire_area_statistics
+  WHERE time = '2025-05-01'
+) AS totals
+CROSS JOIN LATERAL (
+  VALUES
+    ('livingroom',  totals.livingroom),
+    ('bedroom',     totals.bedroom),
+    ('study',       totals.study),
+    ('kitchen',     totals.kitchen),
+    ('bathroom',    totals.bathroom),
+    ('shrine',      totals.shrine),
+    ('balcony',     totals.balcony),
+    ('courtyard',   totals.courtyard),
+    ('restaurant',  totals.restaurant)
+) AS unpivot(x_axis, data);
+
+-- Manager Data
+INSERT INTO components (index, name) 
+VALUES ('fire_area_distribution', '起火區域分布圖');
+
+-- Taipei City
+INSERT INTO public.query_charts 
+(
+	index, history_config, map_config_ids, map_filter, time_from, time_to, update_freq, update_freq_unit, source, short_desc, long_desc, use_case, links, contributors, created_at, updated_at, query_type, query_chart, query_history, city
+)
+VALUES (
+	'fire_area_distribution', null, null, null, 'static', 
+	null, 0, null, '起火區域', '起火區域分布圖', '起火區域分布圖', 'nah', '{}', 
+	null, '2025-05-27', '2025-05-27', 'two_d', 
+	'
+SELECT
+  x_axis,
+  data
+FROM (
+  SELECT
+    SUM(livingroom)  AS livingroom,
+    SUM(bedroom)     AS bedroom,
+    SUM(study)       AS study,
+    SUM(kitchen)     AS kitchen,
+    SUM(bathroom)    AS bathroom,
+    SUM(shrine)      AS shrine,
+    SUM(balcony)     AS balcony,
+    SUM(courtyard)   AS courtyard
+  FROM fire_area_statistics
+  WHERE time = ''2025-05-01'' AND city = ''taipei''
+) AS totals
+CROSS JOIN LATERAL (
+  VALUES
+    (''livingroom'',  totals.livingroom),
+    (''bedroom'',     totals.bedroom),
+    (''study'',       totals.study),
+    (''kitchen'',     totals.kitchen),
+    (''bathroom'',    totals.bathroom),
+    (''shrine'',      totals.shrine),
+    (''balcony'',     totals.balcony),
+    (''courtyard'',   totals.courtyard)
+) AS unpivot(x_axis, data);
+	', 
+	null, 'taipei');
+
+-- Metro Taipei City
+INSERT INTO public.query_charts 
+(
+	index, history_config, map_config_ids, map_filter, time_from, time_to, update_freq, update_freq_unit, source, short_desc, long_desc, use_case, links, contributors, created_at, updated_at, query_type, query_chart, query_history, city
+)
+VALUES (
+	'fire_area_distribution', null, null, null, 'static', 
+	null, 0, null, '起火區域', '起火區域分布圖', '起火區域分布圖', 'nah', '{}', 
+	null, '2025-05-27', '2025-05-27', 'two_d', 
+	'
+SELECT
+  x_axis,
+  data
+FROM (
+  SELECT
+    SUM(livingroom)  AS livingroom,
+    SUM(bedroom)     AS bedroom,
+    SUM(study)       AS study,
+    SUM(kitchen)     AS kitchen,
+    SUM(bathroom)    AS bathroom,
+    SUM(shrine)      AS shrine,
+    SUM(balcony)     AS balcony,
+    SUM(courtyard)   AS courtyard
+  FROM fire_area_statistics
+  WHERE time = ''2025-05-01''
+) AS totals
+CROSS JOIN LATERAL (
+  VALUES
+    (''livingroom'',  totals.livingroom),
+    (''bedroom'',     totals.bedroom),
+    (''study'',       totals.study),
+    (''kitchen'',     totals.kitchen),
+    (''bathroom'',    totals.bathroom),
+    (''shrine'',      totals.shrine),
+    (''balcony'',     totals.balcony),
+    (''courtyard'',   totals.courtyard)
+) AS unpivot(x_axis, data);
+	', 
+	null, 'metrotaipei');
+
+-- Component Charts
+INSERT INTO public.component_charts
+( index, color, types, unit)
+VALUES
+( 'fire_area_distribution', '{#899FFE}', '{TreemapChart}', '件');
