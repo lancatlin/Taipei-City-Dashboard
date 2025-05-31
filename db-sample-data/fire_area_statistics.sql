@@ -78,15 +78,14 @@ FROM (
 ) AS totals
 CROSS JOIN LATERAL (
   VALUES
-    ('livingroom',  totals.livingroom),
-    ('bedroom',     totals.bedroom),
-    ('study',       totals.study),
-    ('kitchen',     totals.kitchen),
-    ('bathroom',    totals.bathroom),
-    ('shrine',      totals.shrine),
-    ('balcony',     totals.balcony),
-    ('courtyard',   totals.courtyard),
-    ('restaurant',  totals.restaurant)
+    ('客廳',  totals.livingroom),
+    ('臥室',     totals.bedroom),
+    ('書房',       totals.study),
+    ('廚房',     totals.kitchen),
+    ('浴廁',    totals.bathroom),
+    ('神龕',      totals.shrine),
+    ('陽台',     totals.balcony),
+    ('庭院',   totals.courtyard)
 ) AS unpivot(x_axis, data);
 
 -- Manager Data
@@ -121,14 +120,14 @@ FROM (
 ) AS totals
 CROSS JOIN LATERAL (
   VALUES
-    (''livingroom'',  totals.livingroom),
-    (''bedroom'',     totals.bedroom),
-    (''study'',       totals.study),
-    (''kitchen'',     totals.kitchen),
-    (''bathroom'',    totals.bathroom),
-    (''shrine'',      totals.shrine),
-    (''balcony'',     totals.balcony),
-    (''courtyard'',   totals.courtyard)
+    (''客廳'',  totals.livingroom),
+    (''臥室'',     totals.bedroom),
+    (''書房'',       totals.study),
+    (''廚房'',     totals.kitchen),
+    (''浴廁'',    totals.bathroom),
+    (''神龕'',      totals.shrine),
+    (''陽台'',     totals.balcony),
+    (''庭院'',   totals.courtyard)
 ) AS unpivot(x_axis, data);
 	', 
 	null, 'taipei');
@@ -161,14 +160,14 @@ FROM (
 ) AS totals
 CROSS JOIN LATERAL (
   VALUES
-    (''livingroom'',  totals.livingroom),
-    (''bedroom'',     totals.bedroom),
-    (''study'',       totals.study),
-    (''kitchen'',     totals.kitchen),
-    (''bathroom'',    totals.bathroom),
-    (''shrine'',      totals.shrine),
-    (''balcony'',     totals.balcony),
-    (''courtyard'',   totals.courtyard)
+    (''客廳'',  totals.livingroom),
+    (''臥室'',     totals.bedroom),
+    (''書房'',       totals.study),
+    (''廚房'',     totals.kitchen),
+    (''浴廁'',    totals.bathroom),
+    (''神龕'',      totals.shrine),
+    (''陽台'',     totals.balcony),
+    (''庭院'',   totals.courtyard)
 ) AS unpivot(x_axis, data);
 	', 
 	null, 'metrotaipei');
