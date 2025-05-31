@@ -240,6 +240,7 @@ function returnChartComponent(name, svg) {
         half: mode === 'half',
         large: mode === 'large',
         preview: mode === 'preview',
+        'tall': config.chart_config.types.includes('TreemapChart'),
       },
     ]"
     :style="style"
@@ -907,6 +908,11 @@ button:hover {
 		height: 75%;
 	}
 }
+
+ .tall {
+     height: 800px;
+     max-height: 800px;
+ }
 
 .preview {
 	height: 170px;
