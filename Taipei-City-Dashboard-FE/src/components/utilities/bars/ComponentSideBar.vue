@@ -7,6 +7,7 @@ import { storeToRefs } from "pinia";
 import { useContentStore } from "../../../store/contentStore";
 import ComponentDragTags from "../forms/ComponentDragTags.vue";
 import { allIcons } from "../../../assets/configs/AllIcons";
+import { t } from "../../../utils/i18n.js";
 
 const contentStore = useContentStore();
 
@@ -37,7 +38,7 @@ const availableIcons = computed(() => {
 function switchDashboard() {
 	if (selectedDashboard.value === "new") {
 		editDashboard.value = {
-			name: "我的新儀表板",
+			name: t("我的新儀表板"),
 			icon: "dashboard",
 			components: [],
 		};
@@ -75,16 +76,16 @@ function handleConfirm() {
 
 <template>
   <div :class="{ componentsidebar: true, 'hide-if-mobile': true }">
-    <h2>新增組件至儀表板</h2>
+    <h2>{{ t('新增組件至儀表板') }}</h2>
     <div class="componentsidebar-settings">
-      <label>選擇儀表板</label>
+      <label>{{ t('選擇儀表板') }}</label>
       <!-- 之後要在contentStore寫處理的東西 -->
       <select
         v-model="selectedDashboard"
         @change="switchDashboard"
       >
         <option value="new">
-          新增儀表板
+          {{ t('新增儀表板') }}
         </option>
         <option
           v-for="dashboard in contentStore.personalDashboards.filter(
@@ -101,16 +102,16 @@ function handleConfirm() {
       v-if="selectedDashboard === 'new'"
       class="componentsidebar-settings"
     >
-      <label>名稱*</label>
+      <label>{{ t('名稱') }}*</label>
       <input
         v-model="editDashboard.name"
         placeholder=""
         required
       >
-      <label>圖示*</label>
+      <label>{{ t('圖示') }}*</label>
       <input
         v-model="iconSearch"
-        placeholder="尋找圖示(英文)"
+        :placeholder="t('尋找圖示(英文)')"
       >
       <div class="componentsidebar-settings-icon">
         <div
@@ -128,7 +129,7 @@ function handleConfirm() {
       </div>
     </div>
     <div class="componentsidebar-settings">
-      <label>儀表板組件 (點擊右側組件 [+] 圖示以新增)</label>
+      <label>{{ t('儀表板組件 點擊右側組件 [+] 圖示以新增') }})</label>
       <div class="componentsidebar-settings-components">
         <ComponentDragTags
           :tags="editDashboard.components"
@@ -150,13 +151,13 @@ function handleConfirm() {
         v-if="selectedDashboard === 'new' && editDashboard.name"
         @click="handleConfirm"
       >
-        新增組件至儀表板
+        {{ t('新增組件至儀表板') }}
       </button>
       <button
         v-else-if="selectedDashboard !== 'new'"
         @click="handleConfirm"
       >
-        更新儀表板
+        {{ t('更新儀表板') }}
       </button>
     </div>
   </div>

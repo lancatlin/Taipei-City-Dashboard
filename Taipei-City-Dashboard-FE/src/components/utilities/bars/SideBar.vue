@@ -6,6 +6,8 @@ import { useContentStore } from "../../../store/contentStore";
 import { useDialogStore } from "../../../store/dialogStore";
 import { useMapStore } from "../../../store/mapStore";
 import { useAuthStore } from "../../../store/authStore";
+import { t } from "../../../utils/i18n.js";
+
 
 import SideBarTab from "../miscellaneous/SideBarTab.vue";
 
@@ -13,6 +15,7 @@ const contentStore = useContentStore();
 const dialogStore = useDialogStore();
 const mapStore = useMapStore();
 const authStore = useAuthStore();
+
 
 // The expanded state is also stored in localstorage to retain the setting after refresh
 const isExpanded = ref(true);
@@ -97,16 +100,16 @@ onMounted(() => {
     </div>
     <template v-if="authStore.token">
       <h1 @click="toggleCollapse(['favorites', 'personal'])">
-        {{ isExpanded ? `私人儀表板 ` : `私人` }}
+        {{ isExpanded ? `$t(私人儀表板) ` : `$t(私人)` }}
       </h1>
       <h2 @click="toggleCollapse('favorites')">
-        {{ isExpanded ? `我的最愛` : `最愛` }}
+        {{ isExpanded ? t('我的最愛') : t('最愛') }}
       </h2>
       <transition name="collapse">
         <template v-if="!collapsedStates.favorites">
           <SideBarTab
             icon="favorite"
-            title="收藏組件"
+            title="{{$t(收藏組件)}}"
             :expanded="isExpanded"
             :index="contentStore.favorites?.index"
           />
@@ -114,7 +117,7 @@ onMounted(() => {
       </transition>
       <div class="sidebar-sub-add">
         <h2 @click="toggleCollapse('personal')">
-          {{ isExpanded ? `個人儀表板 ` : `個人` }}
+          {{ isExpanded ? t('個人儀表板') : t('個人') }}
         </h2>
         <button
           v-if="isExpanded && !collapsedStates.personal"
@@ -131,7 +134,7 @@ onMounted(() => {
         "
         class="sidebar-sub-no"
       >
-        <p>{{ isExpanded ? `尚無個人儀表板 ` : `尚無` }}</p>
+        <p>{{ isExpanded ? `$t(尚無個人儀表板) ` : `$t(尚無)` }}</p>
       </div>
       <transition name="collapse">
         <div
@@ -154,14 +157,14 @@ onMounted(() => {
       </transition>
     </template>
     <h1 @click="toggleCollapse(contentStore.cityManager.activeCities)">
-      {{ isExpanded ? `公共儀表板` : `公共` }}
+      {{ isExpanded ? t('公共儀表板') : t('公共') }}
     </h1>
     <template
       v-for="city in contentStore.cityManager.activeCities"
       :key="city"
     >
       <h2 @click="toggleCollapse(city)">
-        {{ isExpanded ? `${contentStore.cityManager.getExpandedNameName(city)} ` : contentStore.cityManager.getCollapsedName(city) }}
+        {{ isExpanded ? `${t(contentStore.cityManager.getExpandedNameName(city))} ` : t(contentStore.cityManager.getCollapsedName(city)) }}
       </h2>
       <transition name="collapse">
         <div
