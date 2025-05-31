@@ -28,6 +28,7 @@ import BarChartWithGoal from "./components/BarChartWithGoal.vue";
 import IconPercentChart from "./components/IconPercentChart.vue";
 import IndicatorChart from "./components/IndicatorChart.vue";
 import TextUnitChart from "./components/TextUnitChart.vue";
+import FloorPlanChart from "./components/FloorPlanChart.vue";
 
 import MapLegendSvg from "./assets/chart/MapLegend.svg";
 import DistrictChartSvg from "./assets/chart/DistrictChart.svg";
@@ -220,6 +221,8 @@ function returnChartComponent(name, svg) {
 		return svg ? IndicatorChartSvg : IndicatorChart;
 	case "TextUnitChart":
 		return svg ? TextUnitChartSvg : TextUnitChart;
+  case "FloorPlanChart":
+      return FloorPlanChart;
 	default:
 		return svg ? MapLegendSvg : MapLegend;
 	}
@@ -237,6 +240,7 @@ function returnChartComponent(name, svg) {
         half: mode === 'half',
         large: mode === 'large',
         preview: mode === 'preview',
+        'tall': config.chart_config.types.includes('TreemapChart'),
       },
     ]"
     :style="style"
@@ -904,6 +908,11 @@ button:hover {
 		height: 75%;
 	}
 }
+
+ .tall {
+     height: 800px;
+     max-height: 800px;
+ }
 
 .preview {
 	height: 170px;
