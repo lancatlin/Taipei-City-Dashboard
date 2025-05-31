@@ -6,6 +6,7 @@ import "material-icons/iconfont/material-icons.css";
 import { getComponentDataTimeframe } from "./utilities/dataTimeframe";
 import { timeTerms } from "./utilities/AllTimes";
 import { chartTypes } from "./utilities/chartTypes";
+import { t } from "../utils/i18n.js";
 
 import ComponentTag from "./components/ComponentTag.vue";
 import TagTooltip from "./components/TagTooltip.vue";
@@ -250,7 +251,7 @@ function returnChartComponent(name, svg) {
       <!-- Upper Left Corner -->
       <div>
         <h3>
-          {{ config.name }}
+          {{ $t(config.name) }}
           <ComponentTag
             v-if="!mode.includes('map')"
             icon=""
@@ -269,16 +270,16 @@ function returnChartComponent(name, svg) {
           </div>
         </h3>
         <p v-if="mode === 'preview'">
-          {{ props.config.short_desc }}
+          {{ $t(props.config.short_desc) }}
         </p>
         <div v-if="!mode.includes('map') || toggleOn">
           <h4 v-if="dataTime === '維護修復中'">
-            {{ `${config.source} | ` }}<span>warning</span>
-            <h4>{{ `${dataTime}` }}</h4>
+            {{ `${t(config.source)} | ` }}<span>warning</span>
+            <h4>{{ `${t(dataTime)}` }}</h4>
             <span>warning</span>
           </h4>
           <h4 v-else>
-            {{ `${config.source} | ${dataTime}` }}
+            {{ `${t(config.source)} | ${t(dataTime)}` }}
           </h4>
           <div
             v-if="mode !== 'preview'"
@@ -357,7 +358,7 @@ function returnChartComponent(name, svg) {
           :key="city.value"
         >
           <option :value="city.value">
-            {{ city.name }}
+            {{ $t(city.name) }}
           </option>
         </template>
       </select>
@@ -374,7 +375,7 @@ function returnChartComponent(name, svg) {
           }"
           @click="changeActiveChart(item)"
         >
-          {{ chartTypes[item] }}
+          {{ $t(chartTypes[item]) }}
         </button>
       </div>
     </div>
@@ -459,7 +460,7 @@ function returnChartComponent(name, svg) {
       }"
     >
       <span>error</span>
-      <p>組件資料異常</p>
+      <p>{{ t('組件資料異常') }}</p>
     </div>
     <div
       v-else-if="toggleOn || !mode.includes('map')"
@@ -719,13 +720,13 @@ button:hover {
 				text-align: center;
 				transition: color 0.2s, opacity 0.2s;
 				user-select: none;
-	
+
 				&:hover {
 					opacity: 1;
 					color: white;
 				}
 			}
-	
+
 			&-active {
 				background-color: var(--color-complement-text);
 				color: white;
@@ -961,7 +962,7 @@ button:hover {
 			margin: 4px 0;
 			display: flex;
 			gap: 5px;
-	
+
 			div:first-child {
 				margin-left: 5px;
 			}
