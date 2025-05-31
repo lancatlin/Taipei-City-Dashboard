@@ -115,9 +115,9 @@ const roomData = props.series[0].data.reduce((acc, { x, y }) => {
 
    },
 
-   "客廰": {
+   "客廳": {
        "pathData": svgBoxMap.bigmid.path,
-     name: "客廰",
+     name: "客廳",
        textx: svgBoxMap.bigmid.x,
        texty: svgBoxMap.bigmid.y,
 
@@ -300,7 +300,7 @@ function handleDataSelection(roomName) {
 <path d="M202.763 816.024V814.024H205.763V816.024H202.763Z" fill="black" fill-opacity="0.4"/>
 <path d="M202.763 823.024V821.024H205.763V823.024H202.763Z" fill="black" fill-opacity="0.4"/>
 
-<path :class="{'door': true, 'door-special': true, 'door-客廰': true, 'door-active': targetRoom === '客廰' }" d="M196.763 816.024V821.024H266.763V816.024H196.763Z" fill="black"/>
+<path :class="{'door': true, 'door-special': true, 'door-客廳': true, 'door-active': targetRoom === '客廳' }" d="M196.763 816.024V821.024H266.763V816.024H196.763Z" fill="black"/>
 
 <path d="M69.5352 375.456L69.5351 305.456H85.5273V375.456H69.5352Z" fill="white" fill-opacity="0.25"/>
 <path d="M70 305.456V300.456H85V305.456H70Z" fill="black"/>
@@ -505,7 +505,7 @@ function handleDataSelection(roomName) {
  .door.door-陽台{
      transform-origin: 403px 71.2px;
  }
- .door.door-客廰{
+ .door.door-客廳{
      transform-origin: 257px 814px;
  }
  .door.door-浴廁{
