@@ -221,8 +221,8 @@ function returnChartComponent(name, svg) {
 		return svg ? IndicatorChartSvg : IndicatorChart;
 	case "TextUnitChart":
 		return svg ? TextUnitChartSvg : TextUnitChart;
-  case "FloorPlanChart":
-      return FloorPlanChart;
+	case "FloorPlanChart":
+		return FloorPlanChart;
 	default:
 		return svg ? MapLegendSvg : MapLegend;
 	}
