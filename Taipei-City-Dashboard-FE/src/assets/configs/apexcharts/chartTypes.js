@@ -31,7 +31,7 @@ export const chartsPerDataType = {
 		"RadarChart",
 		"PolarAreaChart",
 		"MetroChart",
-    "FloorPlanChart",
+		"FloorPlanChart",
 	],
 	three_d: [
 		"ColumnChart",
