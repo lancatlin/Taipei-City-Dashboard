@@ -2,8 +2,8 @@
   <div class="language-picker">
     <select
       :value="currentLanguage"
-      @change="handleLanguageChange"
       class="language-select"
+      @change="handleLanguageChange"
     >
       <option
         v-for="(label, code) in LANGUAGES"
@@ -17,11 +17,11 @@
 </template>
 
 <script setup>
- import { LANGUAGES, currentLanguage, setLanguage } from '../../../utils/i18n'
+import { LANGUAGES, currentLanguage, setLanguage } from '../../../utils/i18n'
 
- function handleLanguageChange(event) {
-   setLanguage(event.target.value)
- }
+function handleLanguageChange(event) {
+	setLanguage(event.target.value)
+}
 </script>
 
 <style scoped>

@@ -47,7 +47,7 @@ const linkActiveOrNot = computed(() => {
   >
     <span :title="!expanded ? title : ''">{{ icon }}</span>
     <h3 v-if="expanded">
-      {{ title }}
+      {{ $t(title) }}
     </h3>
   </router-link>
 </template>

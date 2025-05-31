@@ -3,6 +3,7 @@
 <!-- Draggable tags that show component info to be used for dashboard settings -->
 <script setup>
 import { ref } from "vue";
+import { t } from "../../../utils/i18n.js";
 
 const draggedItem = ref(null);
 
@@ -63,7 +64,7 @@ const handleDragEnd = () => {
     @dragend="handleDragEnd"
   >
     <h3>{{ tag.id }}</h3>
-    <p>{{ tag.name }}</p>
+    <p>{{ t(tag.name) }}</p>
     <button
       :style="{ backgroundColor: colorData ? tag : '' }"
       @click="$emit('deletetag', index)"

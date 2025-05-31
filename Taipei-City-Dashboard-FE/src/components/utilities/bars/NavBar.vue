@@ -58,25 +58,25 @@ const linkQuery = computed(() => {
             authStore.currentPath.includes('component'),
         }"
       >
-        {{$t('組件瀏覽平台')}}
+        {{ $t('組件瀏覽平台') }}
       </router-link>
       <router-link
         :to="`/dashboard${
           linkQuery.includes('undefined') ? '' : linkQuery
         }`"
       >
-        {{$t('儀表板總覽')}}
+        {{ $t('儀表板總覽') }}
       </router-link>
       <router-link
         :to="`/mapview${
           linkQuery.includes('undefined') ? '' : linkQuery
         }`"
       >
-        {{$t('地圖交叉比對')}}
+        {{ $t('地圖交叉比對') }}
       </router-link>
     </div>
 
-        <LanguagePicker />
+    <LanguagePicker />
     <div class="navbar-user">
       <button
         v-if="!(authStore.isMobileDevice && authStore.isNarrowDevice)"
@@ -95,13 +95,13 @@ const linkQuery = computed(() => {
               href="https://tuic.gov.taipei/documentation"
               target="_blank"
               rel="noreferrer"
-            >{{$t(技術文件)}}</a>
+            >{{ $t('技術文件') }}</a>
           </li>
           <li>
             <button
               @click="dialogStore.showDialog('contributorsList')"
             >
-              { { $t(專案貢獻者) } }
+              {{ $t('專案貢獻者') }}
             </button>
           </li>
         </ul>
@@ -122,7 +122,7 @@ const linkQuery = computed(() => {
         <ul>
           <li>
             <button @click="dialogStore.showDialog('userSettings')">
-              {{$t(用戶設定)}}
+              {{ $t('用戶設定') }}
             </button>
           </li>
           <li
@@ -133,7 +133,7 @@ const linkQuery = computed(() => {
             class="hide-if-mobile"
           >
             <router-link to="/admin">
-              {{$t(管理員後臺)}}
+              {{ $t('管理員後臺') }}
             </router-link>
           </li>
           <li
@@ -141,12 +141,12 @@ const linkQuery = computed(() => {
             class="hide-if-mobile"
           >
             <router-link to="/dashboard">
-              {{$t(返回儀表板)}}
+              {{ $t('返回儀表板') }}
             </router-link>
           </li>
           <li>
             <button @click="authStore.handleLogout">
-              {{$t(登出)}}
+              {{ $t('登出') }}
             </button>
           </li>
         </ul>
@@ -161,7 +161,7 @@ const linkQuery = computed(() => {
         class="navbar-user-user"
       >
         <button @click="dialogStore.showDialog('login')">
-          {{$t('登入')}}
+          {{ $t('登入') }}
         </button>
       </div>
     </div>

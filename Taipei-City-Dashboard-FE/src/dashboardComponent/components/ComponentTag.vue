@@ -22,7 +22,7 @@ defineProps({
     }"
   >
     <span v-if="icon">{{ icon }}</span>
-    <p>{{ text }}</p>
+    <p>{{ $t(text) }}</p>
   </div>
 </template>
 
