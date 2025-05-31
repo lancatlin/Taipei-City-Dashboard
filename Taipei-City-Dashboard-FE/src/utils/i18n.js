@@ -15,57 +15,43 @@ const translations = {
   'zh-tw': {},
   'en': {},
   'ja': {}
-}
+};
 
 // Load translation files
 async function loadTranslations() {
   try {
-    const zhtw = await import('../locales/zh-tw.js')
-    const en = await import('../locales/en.js')
-    const ja = await import('../locales/ja.js')
+      const zhtw = await import('../locales/zh-tw.js');
+      const en = await import('../locales/en.js');
+      const ja = await import('../locales/ja.js');
 
-    translations['zh-tw'] = zhtw.default
-    translations.en = en.default
-    translations.ja = ja.default
+      translations['zh-tw'] = zhtw.default;
+      translations.en = en.default;
+      translations.ja = ja.default;
   } catch (error) {
-    console.warn('Failed to load some translations:', error)
+      console.warn('Failed to load some translations:', error);
   }
 }
 
 // Initialize translations
-loadTranslations()
+loadTranslations();
 
 // Translation function
 export function t(key, params = {}) {
-  const keys = key.split('.')
-  let value = translations[currentLanguage.value]
-
-  for (const k of keys) {
-    value = value?.[k]
-  }
-
-  if (!value) {
-    console.warn(`Translation missing for key: ${key}`)
-    return key
-  }
-
-  // Simple parameter replacement
-  return Object.keys(params).reduce((str, param) => {
-    return str.replace(new RegExp(`{${param}}`, 'g'), params[param])
-  }, value)
+    let value = translations[currentLanguage.value][key];
+    return value || key;
 }
 
 // Reactive translation function for use in templates
-export const $t = computed(() => t)
+export const $t = computed(() => t);
 
 // Language switcher
 export function setLanguage(lang) {
   if (LANGUAGES[lang]) {
-    currentLanguage.value = lang
-    localStorage.setItem('dashboard-language', lang)
-    document.documentElement.lang = lang
+      currentLanguage.value = lang;
+      localStorage.setItem('dashboard-language', lang);
+      document.documentElement.lang = lang;
   }
 }
 
 // Get current language
-export const getCurrentLanguage = () => currentLanguage.value
+export const getCurrentLanguage = () => currentLanguage.value;

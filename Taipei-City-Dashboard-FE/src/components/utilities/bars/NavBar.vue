@@ -58,21 +58,21 @@ const linkQuery = computed(() => {
             authStore.currentPath.includes('component'),
         }"
       >
-        {{$t('navigation.componentBrowsing')}}
+        {{$t('組件瀏覽平台')}}
       </router-link>
       <router-link
         :to="`/dashboard${
           linkQuery.includes('undefined') ? '' : linkQuery
         }`"
       >
-        {{$t('navigation.dashboard')}}
+        {{$t('儀表板總覽')}}
       </router-link>
       <router-link
         :to="`/mapview${
           linkQuery.includes('undefined') ? '' : linkQuery
         }`"
       >
-        {{$t('navigation.mapCrossCompare')}}
+        {{$t('地圖交叉比對')}}
       </router-link>
     </div>
 
@@ -95,13 +95,13 @@ const linkQuery = computed(() => {
               href="https://tuic.gov.taipei/documentation"
               target="_blank"
               rel="noreferrer"
-            >技術文件</a>
+            >{{$t(技術文件)}}</a>
           </li>
           <li>
             <button
               @click="dialogStore.showDialog('contributorsList')"
             >
-              專案貢獻者
+              { { $t(專案貢獻者) } }
             </button>
           </li>
         </ul>
@@ -122,7 +122,7 @@ const linkQuery = computed(() => {
         <ul>
           <li>
             <button @click="dialogStore.showDialog('userSettings')">
-              用戶設定
+              {{$t(用戶設定)}}
             </button>
           </li>
           <li
@@ -133,7 +133,7 @@ const linkQuery = computed(() => {
             class="hide-if-mobile"
           >
             <router-link to="/admin">
-              管理員後臺
+              {{$t(管理員後臺)}}
             </router-link>
           </li>
           <li
@@ -141,12 +141,12 @@ const linkQuery = computed(() => {
             class="hide-if-mobile"
           >
             <router-link to="/dashboard">
-              返回儀表板
+              {{$t(返回儀表板)}}
             </router-link>
           </li>
           <li>
             <button @click="authStore.handleLogout">
-              登出
+              {{$t(登出)}}
             </button>
           </li>
         </ul>
@@ -161,7 +161,7 @@ const linkQuery = computed(() => {
         class="navbar-user-user"
       >
         <button @click="dialogStore.showDialog('login')">
-          登入
+          {{$t('登入')}}
         </button>
       </div>
     </div>
@@ -169,32 +169,32 @@ const linkQuery = computed(() => {
 </template>
 
 <style scoped lang="scss">
-.navbar {
-	height: 60px;
-	width: 100vw;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-bottom: 1px solid var(--color-border);
-	background-color: var(--color-component-background);
-	user-select: none;
+ .navbar {
+	   height: 60px;
+	   width: 100vw;
+	   display: flex;
+	   justify-content: space-between;
+	   align-items: center;
+	   border-bottom: 1px solid var(--color-border);
+	   background-color: var(--color-component-background);
+	   user-select: none;
 
-	&-logo {
-		display: flex;
+	   &-logo {
+		     display: flex;
 
-		h1 {
-			font-weight: 500;
-		}
+		     h1 {
+			       font-weight: 500;
+		     }
 
-		h2 {
-			font-size: var(--font-s);
-			font-weight: 400;
-		}
+		     h2 {
+			       font-size: var(--font-s);
+			       font-weight: 400;
+		     }
 
-		&-image {
-			width: 22.94px;
-			height: 45px;
-			margin: 0 var(--font-m);
+		     &-image {
+			       width: 22.94px;
+			       height: 45px;
+			       margin: 0 var(--font-m);
 
 			img {
 				height: 45px;
