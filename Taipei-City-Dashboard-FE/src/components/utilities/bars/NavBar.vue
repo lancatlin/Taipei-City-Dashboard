@@ -12,6 +12,7 @@ import { useDialogStore } from "../../../store/dialogStore";
 
 import UserSettings from "../../dialogs/UserSettings.vue";
 import ContributorsList from "../../dialogs/ContributorsList.vue";
+import LanguagePicker from "../miscellaneous/LanguagePicker.vue";
 
 const route = useRoute();
 const authStore = useAuthStore();
@@ -57,23 +58,25 @@ const linkQuery = computed(() => {
             authStore.currentPath.includes('component'),
         }"
       >
-        組件瀏覽平台
+        {{$t('navigation.componentBrowsing')}}
       </router-link>
       <router-link
         :to="`/dashboard${
           linkQuery.includes('undefined') ? '' : linkQuery
         }`"
       >
-        儀表板總覽
+        {{$t('navigation.dashboard')}}
       </router-link>
       <router-link
         :to="`/mapview${
           linkQuery.includes('undefined') ? '' : linkQuery
         }`"
       >
-        地圖交叉比對
+        {{$t('navigation.mapCrossCompare')}}
       </router-link>
     </div>
+
+        <LanguagePicker />
     <div class="navbar-user">
       <button
         v-if="!(authStore.isMobileDevice && authStore.isNarrowDevice)"
@@ -327,4 +330,19 @@ const linkQuery = computed(() => {
 		}
 	}
 }
+ :deep(.language-picker) {
+		 margin-left: 1rem;
+		 .language-select {
+				 background: var(--color-border);
+				 border: 1px solid var(--color-border-complement);
+				 color: var(--color-complement-text);
+				 padding: 0.25rem 0.5rem;
+				 border-radius: 5px;
+				 font-size: 0.9rem;
+				 &:focus {
+					   outline: none;
+					   border-color: var(--color-highlight);
+				 }
+		 }
+ }
 </style>
