@@ -1,0 +1,2077 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "華山分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.52082093077296,
+          25.047266263493373
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "忠孝分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.52706896606003,
+          25.043678135326438
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "泉州分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.51245159241799,
+          25.02460774017672
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "古亭分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.53760276336037,
+          25.011689974302648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "城中分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.51343631610477,
+          25.046939874009684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "雙園分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.49549502664462,
+          25.028809139501572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "龍山分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.49932971324262,
+          25.038582788983096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "萬芳分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.56644894522242,
+          25.002067288751494
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "景美分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.54118361126116,
+          24.992302641335066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "木柵分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.56340656108155,
+          24.988807527838937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "寶橋分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.55489723813398,
+          24.97990165561621
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "金華分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.52775447524688,
+          25.032498927747703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "安和分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.55226174972799,
+          25.032906424906663
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "復興分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.54329127410789,
+          25.03005953017549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "南港分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.60726581340549,
+          25.05466600872493
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "舊莊分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.61528539820318,
+          25.045072365416782
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "成德分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.58669769492742,
+          25.04779711024337
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "信義分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.56874746885326,
+          25.040806990362928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "永吉分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.56918546952237,
+          25.045526979331157
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "莊敬分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.56521866341618,
+          25.029797199791847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "大直分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.55669581554655,
+          25.08000721703907
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "松江分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.53393343882348,
+          25.04750861213463
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "建國分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.53588497655777,
+          25.0678327709889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "搜救犬訓練基地",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.54941588744143,
+          25.072495946658886
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "圓山分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.52917745468811,
+          25.06851587770513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "八德分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.56296569613674,
+          25.048538961379606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "中崙分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.54583968204457,
+          25.048377175833206
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "東湖分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6129192651864,
+          25.06747153829749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "大湖分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6016503011998,
+          25.083885341218778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "內湖分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.59036946828512,
+          25.069512964277013
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "民權分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.57770929222157,
+          25.06689048052392
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "建成分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.51824595997236,
+          25.054750520790133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "延平分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.51136879590524,
+          25.050233230536822
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "大同分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.51373474718545,
+          25.061474055083895
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "山仔后分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.54567357674641,
+          25.133854965268863
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "天母分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.53290239391366,
+          25.12526167304223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "福安分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4966888015786,
+          25.09635330707523
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "社子分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.51148862481969,
+          25.079095563878326
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "劍潭分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.52765358545102,
+          25.089935811031697
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "雙溪分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.54467990359787,
+          25.09762031251793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "後港分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.51804603371002,
+          25.087333480405597
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "陽明山分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.54664504041698,
+          25.15157324029292
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "光明分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5024688674365,
+          25.13515432056853
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "關渡分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.46667022495079,
+          25.123056460202513
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "石牌分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.51690573634383,
+          25.117942448795993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "秀山分隊",
+        "city": "台北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.49289945157865,
+          25.14527976211277
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "消防局局本部",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.453934,
+          25.00128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一救災救護大隊部",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.468579,
+          25.035069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一大隊-板橋中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.463377,
+          24.999116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一大隊-海山中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.472171,
+          25.017497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一大隊-莒光分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.468579,
+          25.035069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一大隊-新板分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4648591,
+          25.0093551
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一大隊-板橋分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.463377,
+          24.999116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一大隊-大觀分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.441728,
+          25.004667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一大隊-海山分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.459953,
+          25.024044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一大隊-民生分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.472171,
+          25.017497
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第一大隊-溪崑分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.430338,
+          24.988713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二救災救護大隊部",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.450991,
+          25.035936
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-新莊中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4466624,
+          25.0548825
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-五泰林中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.427391,
+          25.05006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-德音中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.456748,
+          25.063262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-五工分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.456748,
+          25.063262
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-裕民分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.417779,
+          25.021885
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-福營分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4276212,
+          25.029572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-新莊分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4174247,
+          25.0265898
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-中港分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4466839,
+          25.0548631
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-頭前分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.466995,
+          25.049147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-五股分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.439817,
+          25.082467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-更寮分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.461665,
+          25.078279
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-泰山分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.427391,
+          25.05006
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-林口分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.388389,
+          25.078824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第二大隊-文化分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.362877,
+          25.069963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三救災救護大隊部",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.461428,
+          25.092974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-三重中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.50097,
+          25.06665
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-蘆洲中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.469149,
+          25.0766814
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-淡水中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4397676,
+          25.1750945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-三重分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.500509,
+          25.060156
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-鷺江分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.461428,
+          25.092974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-蘆洲分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.469026,
+          25.076702
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-重陽分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.48711,
+          25.060968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-二重分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.469114,
+          25.058572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-八里分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.408168,
+          25.155829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-龍源分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.451362,
+          25.132349
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-淡水分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4396473,
+          25.1751676
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-竹圍分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.459958,
+          25.138221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-三芝分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.500618,
+          25.258541
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第三大隊-滬尾分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.437422,
+          25.171966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四救災救護大隊部",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.542197,
+          24.969111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-新店中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.493706,
+          24.954081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-文山中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6281,
+          25.00289
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-深坑分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.628113,
+          25.002647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-新店分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.542197,
+          24.969111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-直潭分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.534311,
+          24.938587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-安康分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.493742,
+          24.953824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-安和分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.517126,
+          24.980284
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-石碇分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6609489,
+          24.9912291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-坪林分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.712546,
+          24.936671
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-雪山分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.7113155,
+          24.9406027
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第四大隊-烏來分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.548577,
+          24.863964
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五救災救護大隊部",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.357061,
+          24.940749
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-三鶯中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.357339,
+          24.9407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-樹林中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.421674,
+          24.974538
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-土城中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.445127,
+          24.97333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-三峽分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.375348,
+          24.930642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-隆恩分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.357339,
+          24.9407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-土城分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4450156,
+          24.9735993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-清水分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4602029,
+          24.9887569
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-頂埔分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.43174,
+          24.96573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-樹林分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.421674,
+          24.974538
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-樹潭分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.420901,
+          25.007235
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-柑園分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.402941,
+          24.960453
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-鶯歌分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3429023,
+          24.9521459
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第五大隊-鳳鳴分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3346686,
+          24.9671058
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六救災救護大隊部",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.633771,
+          25.064852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-瑞芳中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.80759,
+          25.10733
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-金山中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.628188,
+          25.220963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-汐止中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6570047,
+          25.0641226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-社后分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.633771,
+          25.064852
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-汐止分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.679533,
+          25.071299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-長青分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.6034992,
+          25.1130476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-橫科分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.620148,
+          25.050521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-瑞芳分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.8074,
+          25.1074709
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-瑞亭分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.762199,
+          25.102295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-九份分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.846819,
+          25.107362
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-金山分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.628188,
+          25.220963
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-石門分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.567838,
+          25.294276
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-萬里分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.689043,
+          25.180607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-雙溪分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.866684,
+          25.03192
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-貢寮分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.909888,
+          25.021945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-平溪分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.732516,
+          25.023228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第六大隊-保長分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.679533,
+          25.071299
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七救災救護大隊部",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.503305,
+          25.005546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七大隊-中和中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5032236,
+          25.00555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七大隊-永和中隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.520124,
+          25.00427
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七大隊-永和分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.519876,
+          25.009503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七大隊-永利分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5201424,
+          25.0045231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七大隊-永平分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5051348,
+          25.0134721
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七大隊-中和分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.503305,
+          25.005546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七大隊-員山分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.481614,
+          25.009112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七大隊-南勢分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.506601,
+          24.9898241
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "第七大隊-國光分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.472824,
+          25.000679
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "特搜大隊部",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.453934,
+          25.00128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "特搜大隊-南雅分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.453934,
+          25.00128
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "特搜大隊-慈福分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.4876143,
+          25.0837105
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "特搜大隊-德音分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.43344,
+          25.071444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "特搜大隊-秀峰分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.657031,
+          25.06413
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "特搜大隊-大埔分隊",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.3624497,
+          24.9069666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "車輛保養中心",
+        "city": "新北市"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.357339,
+          24.9407
+        ]
+      }
+    }
+  ]
+}
