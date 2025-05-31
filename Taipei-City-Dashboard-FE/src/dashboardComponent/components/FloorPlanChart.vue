@@ -14,6 +14,7 @@ const props = defineProps([
 
 
 
+
 const emits = defineEmits([
 	"filterByParam",
 	"filterByLayer",
@@ -27,51 +28,52 @@ const targetRoom = ref(null);
 const mousePosition = ref({ x: null, y: null });
 const selectedIndex = ref(null);
 
- const roomCsv = {
-   "客廰": 5,
-   "餐廰": 3,
-   "臥室": 2,
-   "書房": 7,
-   "廚房": 9,
-   "浴廁": 2,
-   "神龕": 1,
-};
+ // Transform API data in form of {x: str, y: str} into more usable
+ // Object of type {[roomName]: number IncidentCount}
+const roomData = props.series[0].data.reduce((acc, { x, y }) => {
+   acc[x] = y;
+   return acc;
+}, {});
 
+// Map of box to allow more easily tweaking per-room coordinates of text
  const svgBoxMap = {
    'topleft': {
      x: 72,
      y: 393,
-     path: "M752.397 340.318C761.234 340.318 768.397 347.482 768.397 356.318V600.598C768.397 609.435 761.234 616.598 752.397 616.598H493.209C484.373 616.599 477.209 623.762 477.209 632.598V880.598C477.209 889.435 470.045 896.598 461.209 896.598H312.532C303.696 896.598 296.532 889.435 296.532 880.598V356.318C296.532 347.482 303.696 340.318 312.532 340.318H752.397Z",
+
+     path: "M264.532 143.853C273.369 143.853 280.532 151.017 280.532 159.853V501.311C280.532 510.148 273.369 517.311 264.532 517.311H16C7.16345 517.311 0 510.148 0 501.311V159.853C0 151.017 7.16344 143.853 16 143.853H264.532Z",
    },
    'midleft': {
      x: 62,
      y: 683,
-     path: "M264.532 722.891C273.369 722.891 280.532 730.055 280.532 738.891V880.47C280.532 889.307 273.369 896.47 264.532 896.47H16C7.16348 896.47 5.77289e-05 889.307 0 880.47V738.891C0 730.055 7.16344 722.891 16 722.891H264.532Z",
+
+     path: "M264.532 533.311C273.369 533.311 280.532 540.475 280.532 549.311V690.891C280.532 699.728 273.369 706.891 264.532 706.891H16C7.16357 706.891 0.000189678 699.728 0 690.891V549.311C0.000222664 540.475 7.16358 533.311 16 533.311H264.532Z",
    },
    'bottomleft': {
      x: 62,
      y: 852,
-     path: "M752.397 630.683C761.234 630.683 768.397 637.847 768.397 646.683V788.262C768.397 797.099 761.234 804.262 752.397 804.262H506.486C497.65 804.262 490.486 797.099 490.486 788.262V638.683C490.486 634.265 494.068 630.683 498.486 630.683H752.397Z",
+     path: "M264.532 722.891C273.369 722.891 280.532 730.055 280.532 738.891V880.47C280.532 889.307 273.369 896.47 264.532 896.47H16C7.16348 896.47 5.77289e-05 889.307 0 880.47V738.891C0 730.055 7.16344 722.891 16 722.891H264.532Z",
    },
    'topright': {
      x: 462,
      y: 112,
-     path: "M264.532 533.311C273.369 533.311 280.532 540.475 280.532 549.311V690.891C280.532 699.728 273.369 706.891 264.532 706.891H16C7.16357 706.891 0.000189678 699.728 0 690.891V549.311C0.000222664 540.475 7.16358 533.311 16 533.311H264.532Z",
+     path: "M741.634 0.569092C756.415 0.569092 768.397 9.87454 768.397 21.3533V106.937C768.397 118.416 756.415 127.722 741.634 127.722H323.301C308.52 127.722 296.538 118.416 296.538 106.937V21.3533C296.538 9.87462 308.52 0.569235 323.301 0.569092H741.634Z",
    },
    'midright': {
      x: 462,
      y: 282,
-     path: "M264.532 143.853C273.369 143.853 280.532 151.017 280.532 159.853V501.311C280.532 510.148 273.369 517.311 264.532 517.311H16C7.16345 517.311 0 510.148 0 501.311V159.853C0 151.017 7.16344 143.853 16 143.853H264.532Z",
+     path: "M752.397 143.853C761.234 143.853 768.397 151.017 768.397 159.853V307.293C768.397 316.129 761.234 323.293 752.397 323.293H312.538C303.702 323.293 296.538 316.129 296.538 307.293V159.853C296.538 151.017 303.701 143.854 312.537 143.853H752.397Z",
    },
    'bigmid': {
      x: 462,
      y: 552,
-     path: "M752.397 143.853C761.234 143.853 768.397 151.017 768.397 159.853V307.293C768.397 316.129 761.234 323.293 752.397 323.293H312.538C303.702 323.293 296.538 316.129 296.538 307.293V159.853C296.538 151.017 303.701 143.854 312.537 143.853H752.397Z",
+     path: "M752.397 340.318C761.234 340.318 768.397 347.482 768.397 356.318V600.598C768.397 609.435 761.234 616.598 752.397 616.598H493.209C484.373 616.599 477.209 623.762 477.209 632.598V880.598C477.209 889.435 470.045 896.598 461.209 896.598H312.532C303.696 896.598 296.532 889.435 296.532 880.598V356.318C296.532 347.482 303.696 340.318 312.532 340.318H752.397Z"
    },
    'bottomright': {
      x: 562,
      y: 772,
-     path: "M741.634 0.569092C756.415 0.569092 768.397 9.87454 768.397 21.3533V106.937C768.397 118.416 756.415 127.722 741.634 127.722H323.301C308.52 127.722 296.538 118.416 296.538 106.937V21.3533C296.538 9.87462 308.52 0.569235 323.301 0.569092H741.634Z",
+
+     path: "M752.397 630.683C761.234 630.683 768.397 637.847 768.397 646.683V788.262C768.397 797.099 761.234 804.262 752.397 804.262H506.486C497.65 804.262 490.486 797.099 490.486 788.262V638.683C490.486 634.265 494.068 630.683 498.486 630.683H752.397Z",
    },
 
  }
@@ -128,57 +130,6 @@ const selectedIndex = ref(null);
      texty: svgBoxMap.bottomright.y,
 
    },
-   /* "陽台": {
-    *   "pathData": ""
-    * },
-    * "庭院": {
-    *   "pathData": ""
-    * },
-    * "辦公室": {
-    *   "pathData": ""
-    * },
-    * "教室": {
-    *   "pathData": ""
-    * },
-    * "倉庫": {
-    *   "pathData": ""
-    * },
-    * "機房": {
-    *   "pathData": ""
-    * },
-    * "攤位": {
-    *   "pathData": ""
-    * },
-    * "工寮": {
-    *   "pathData": ""
-    * },
-    * "樓梯間": {
-    *   "pathData": ""
-    * },
-    * "電梯": {
-    *   "pathData": ""
-    * },
-    * "管道間": {
-    *   "pathData": ""
-    * },
-    * "走廊": {
-    *   "pathData": ""
-    * },
-    * "停車場": {
-    *   "pathData": ""
-    * },
-    * "騎樓": {
-    *   "pathData": ""
-    * },
-    * "路邊": {
-    *   "pathData": ""
-    * },
-    * "墓地": {
-    *   "pathData": ""
-    * },
-    * "其他": {
-    *   "pathData": ""
-    * }, */
 };
 
  const roomSumHighest = computed(()=>{
@@ -188,7 +139,7 @@ const selectedIndex = ref(null);
     // Create room data from series prop
     Object.keys(rooms).forEach((roomName) => {
         // Get value from series data or default to 0
-        const value = roomCsv[roomName] || 0;
+        const value = roomData[roomName] || 0;
         sum += value;
         if (value > highest) highest = value;
       });
@@ -206,7 +157,7 @@ const selectedIndex = ref(null);
 // fillOpacity: number,
 // isActive: boolean
 function createRoomPath(room, district, highest, sum) {
-   const value = roomCsv[room] || 0;
+   const value = roomData[room] || 0;
 
   const fillOpacity = Math.max(0.12, value / highest);
   const pathData = rooms[room]?.pathData || "";
@@ -223,7 +174,7 @@ function createRoomPath(room, district, highest, sum) {
 }
 
 const roomsMap = computed(() => {
-  return Object.keys(rooms).map(room => createRoomPath(room));
+  return Object.keys(rooms).map(room => createRoomPath(room, roomSumHighest.value.highest, roomSumHighest.value.sum));
 });
 
 
@@ -279,28 +230,7 @@ function handleDataSelection(roomName) {
   }
 }
 
-// roompath is returnof createRoomPath
-const pathComponent = (roomPath) => {
-	return `<path
-            data-city="${buildingName}"
-            data-name="${roomPath.roomName}"
-            :class="{
-              'active-district':
-                targetDistrict === '${roomPath.roomName}' ||
-                selectedIndex === ${roomPath.roomIndex},
-              'initial-animation-14': true,
-            }"
-            :fill-opacity="${roomPath.fillOpacity}"
-            :fill="${roomPath.fillColor}"
-            d="${roomPath.pathData}"
-            @mouseenter="toggleActive(${roomPath})"
-            @mousemove="updateMouseLocation"
-            @mouseleave="toggleActiveToNull"
-            @click="handleDataSelection('${roomPath.roomName}')"
-          />`;
-};
 
-const activeDistrict = ref("松山區");
 
 </script>
 
@@ -324,12 +254,12 @@ const activeDistrict = ref("松山區");
         </div>
       </div>
     <svg viewBox="0 0 1501 1486" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect y="0.563477" width="800.398" height="784.873" rx="32" fill="black"/>
+      <rect y="0" width="820.398" height="954" rx="32" fill="#111111" stroke="gray" />
       <path v-for="room in roomsMap"
       :key="room.name"
       :d="room.pathData"
-      fill="#ffffff"
-      :fill-opacity="room.fillOpacity"
+      fill="red"
+            :fill-opacity="room.fillOpacity"
       :class="{ 'active-room': room.isActive }"
       @mouseenter="toggleActive(room.name)"
       @mousemove="updateMouseLocation"
@@ -340,7 +270,6 @@ const activeDistrict = ref("松山區");
             class="room-name"
             :x="room.textx"
             :y="room.texty"
-            fill="black"
             :dy="-55"
       >
 {{room.name}}
@@ -350,7 +279,6 @@ const activeDistrict = ref("松山區");
             class="room-value"
             :x="room.textx"
             :y="room.texty"
-            fill="black"
             :dx="25"
             >
         {{room.value}} 件
@@ -359,7 +287,6 @@ const activeDistrict = ref("松山區");
             class="fire-emoji"
             :x="room.textx"
             :y="room.texty"
-            fill="black"
             :dx="-25"
       >
         🔥
@@ -375,7 +302,7 @@ const activeDistrict = ref("松山區");
       :style="tooltipPosition"
     >
       <p>{{ targetRoom }}</p>
-      <p>{{ roomCsv[targetRoom] }}</p>
+      <p>{{ roomData[targetRoom] }}</p>
     </div>
   </div>
 </template>
@@ -473,24 +400,26 @@ const activeDistrict = ref("松山區");
 
  .room-name {
      font-size: 4rem;
+     fill: white;
  }
  .room-value {
      font-size: 3rem;
+     fill: white;
  }
  .fire-emoji {
      fill: red;
      font-size: 3rem;
  }
 
-@keyframes ease-in {
-	0% {
-		opacity: 0;
-	}
+ @keyframes ease-in {
+	   0% {
+		     opacity: 0;
+	   }
 
-	100% {
-		opacity: 1;
-	}
-}
+	   100% {
+		     opacity: 1;
+	   }
+ }
 
 
 
