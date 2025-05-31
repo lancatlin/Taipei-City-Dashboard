@@ -255,7 +255,12 @@ function handleDataSelection(roomName) {
         </div>
       </div>
     <svg class="main-svg" viewBox="0 0 1501 1486" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Bounding Box -->
       <rect y="0" width="820.398" height="954" rx="32" fill="#111111" stroke="gray" />
+
+      <!-- Wrapper for all Other Elements -->
+      <g transform="translate(20,15)">
+
 
 <!-- Furniture -->
 <g>
@@ -466,6 +471,7 @@ function handleDataSelection(roomName) {
 </text>
 
 
+      </g>
     </svg>
     </div>
 
