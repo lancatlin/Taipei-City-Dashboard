@@ -133,5 +133,11 @@ export default {
 	"非電動巴士": "Non-electric Buses",
 	"電動公車數量": "Number of Electric Buses",
 	"單向": "One-way",
-	"雙向": "Two-way"
+	"雙向": "Two-way",
+	"下次更新": "Next Update",
+	"自行車路網": "Bicycle Network",
+	"組件資訊與功能": "Component Information and Functionality",
+	"可用圖表篩選地圖": "Available Charts and Filter Map",
+	"具備空間資料": "Includes Geospatial Data",
+	"具備歷史資料": "Includes Historical Data",
 };
