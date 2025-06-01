@@ -1042,7 +1042,7 @@ function handleDataSelection(roomName) {
             :d="room.pathData"
             fill="red"
             :fill-opacity="room.fillOpacity"
-            :class="{ 'active-room': room.isActive }"
+            :class="{ 'active-room': room.isActive, 'fire': true}"
             @mouseenter="toggleActive(room.name)"
             @mousemove="updateMouseLocation"
             @mouseleave="toggleActiveToNull"
@@ -1051,7 +1051,7 @@ function handleDataSelection(roomName) {
           <text
             v-for="room in roomsMap"
             :key="room.name"
-            class="room-name"
+            :class="{'room-name': true, 'fire': room.value === roomSumHighest?.highest}"
             opacity="1"
             :x="room.textx"
             :y="room.texty"
@@ -1062,7 +1062,7 @@ function handleDataSelection(roomName) {
           <text
             v-for="room in roomsMap"
             :key="room.name"
-            class="room-value"
+            :class="{'room-value': true, 'fire': room.value === roomSumHighest?.highest}"
             :x="room.textx"
             :y="room.texty"
             :dx="25"
@@ -1073,7 +1073,7 @@ function handleDataSelection(roomName) {
           <text
             v-for="room in roomsMap"
             :key="room.name"
-            class="fire-emoji"
+            :class="{'fire-emoji': true, 'fire': room.value === roomSumHighest?.highest}"
             :x="room.textx"
             :y="room.texty"
             :dx="-25"
@@ -1244,4 +1244,41 @@ function handleDataSelection(roomName) {
 .door.door-浴廁 {
 	transform-origin: 289px 724px;
 }
+
+
+	  .fire {
+        		  animation: burn 1.5s linear infinite alternate;
+		  -webkit-animation: burn 1.5s linear infinite alternate;
+		  	 -moz-animation: burn 1.5s linear infinite alternate;
+		  	  -ms-animation: burn 1.5s linear infinite alternate;
+	  }
+
+	  @keyframes burn {
+			from { text-shadow: -.1em 0 .3em #fefcc9, .1em -.1em .3em #feec85, -.2em -.2em .4em #ffae34, .2em -.3em .3em #ec760c, -.2em -.4em .4em #cd4606, .1em -.5em .7em #973716, .1em -.7em .7em #451b0e; }
+			45%  { text-shadow: .1em -.2em .5em #fefcc9, .15em 0 .4em #feec85, -.1em -.25em .5em #ffae34, .15em -.45em .5em #ec760c, -.1em -.5em .6em #cd4606, 0 -.8em .6em #973716, .2em -1em .8em #451b0e; }
+			70%  { text-shadow: -.1em 0 .3em #fefcc9, .1em -.1em .3em #feec85, -.2em -.2em .6em #ffae34, .2em -.3em .4em #ec760c, -.2em -.4em .7em #cd4606, .1em -.5em .7em #973716, .1em -.7em .9em #451b0e; }
+			to   { text-shadow: -.1em -.2em .6em #fefcc9, -.15em 0 .6em #feec85, .1em -.25em .6em #ffae34, -.15em -.45em .5em #ec760c, .1em -.5em .6em #cd4606, 0 -.8em .6em #973716, -.2em -1em .8em #451b0e; }
+	  }
+
+	  @-webkit-keyframes burn {
+			from { text-shadow: -.1em 0 .3em #fefcc9, .1em -.1em .3em #feec85, -.2em -.2em .4em #ffae34, .2em -.3em .3em #ec760c, -.2em -.4em .4em #cd4606, .1em -.5em .7em #973716, .1em -.7em .7em #451b0e; }
+			45%  { text-shadow: .1em -.2em .5em #fefcc9, .15em 0 .4em #feec85, -.1em -.25em .5em #ffae34, .15em -.45em .5em #ec760c, -.1em -.5em .6em #cd4606, 0 -.8em .6em #973716, .2em -1em .8em #451b0e; }
+			70%  { text-shadow: -.1em 0 .3em #fefcc9, .1em -.1em .3em #feec85, -.2em -.2em .6em #ffae34, .2em -.3em .4em #ec760c, -.2em -.4em .7em #cd4606, .1em -.5em .7em #973716, .1em -.7em .9em #451b0e; }
+			to   { text-shadow: -.1em -.2em .6em #fefcc9, -.15em 0 .6em #feec85, .1em -.25em .6em #ffae34, -.15em -.45em .5em #ec760c, .1em -.5em .6em #cd4606, 0 -.8em .6em #973716, -.2em -1em .8em #451b0e; }
+	  }
+
+	  @-moz-keyframes burn {
+			from { text-shadow: -.1em 0 .3em #fefcc9, .1em -.1em .3em #feec85, -.2em -.2em .4em #ffae34, .2em -.3em .3em #ec760c, -.2em -.4em .4em #cd4606, .1em -.5em .7em #973716, .1em -.7em .7em #451b0e; }
+			45%  { text-shadow: .1em -.2em .5em #fefcc9, .15em 0 .4em #feec85, -.1em -.25em .5em #ffae34, .15em -.45em .5em #ec760c, -.1em -.5em .6em #cd4606, 0 -.8em .6em #973716, .2em -1em .8em #451b0e; }
+			70%  { text-shadow: -.1em 0 .3em #fefcc9, .1em -.1em .3em #feec85, -.2em -.2em .6em #ffae34, .2em -.3em .4em #ec760c, -.2em -.4em .7em #cd4606, .1em -.5em .7em #973716, .1em -.7em .9em #451b0e; }
+			to   { text-shadow: -.1em -.2em .6em #fefcc9, -.15em 0 .6em #feec85, .1em -.25em .6em #ffae34, -.15em -.45em .5em #ec760c, .1em -.5em .6em #cd4606, 0 -.8em .6em #973716, -.2em -1em .8em #451b0e; }
+	  }
+
+	  @-ms-keyframes burn {
+			from { text-shadow: -.1em 0 .3em #fefcc9, .1em -.1em .3em #feec85, -.2em -.2em .4em #ffae34, .2em -.3em .3em #ec760c, -.2em -.4em .4em #cd4606, .1em -.5em .7em #973716, .1em -.7em .7em #451b0e; }
+			45%  { text-shadow: .1em -.2em .5em #fefcc9, .15em 0 .4em #feec85, -.1em -.25em .5em #ffae34, .15em -.45em .5em #ec760c, -.1em -.5em .6em #cd4606, 0 -.8em .6em #973716, .2em -1em .8em #451b0e; }
+			70%  { text-shadow: -.1em 0 .3em #fefcc9, .1em -.1em .3em #feec85, -.2em -.2em .6em #ffae34, .2em -.3em .4em #ec760c, -.2em -.4em .7em #cd4606, .1em -.5em .7em #973716, .1em -.7em .9em #451b0e; }
+			to   { text-shadow: -.1em -.2em .6em #fefcc9, -.15em 0 .6em #feec85, .1em -.25em .6em #ffae34, -.15em -.45em .5em #ec760c, .1em -.5em .6em #cd4606, 0 -.8em .6em #973716, -.2em -1em .8em #451b0e; }
+	  }
+
 </style>
