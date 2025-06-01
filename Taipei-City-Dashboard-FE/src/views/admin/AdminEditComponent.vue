@@ -13,6 +13,7 @@ import AdminComponentSettings from "../../components/dialogs/admin/AdminComponen
 import { chartTypes } from "../../assets/configs/apexcharts/chartTypes";
 import { mapTypes } from "../../assets/configs/mapbox/mapConfig";
 import AdminComponentTemplate from "../../components/dialogs/admin/AdminComponentTemplate.vue";
+import { t } from "../../utils/i18n";
 
 const adminStore = useAdminStore();
 const dialogStore = useDialogStore();
@@ -40,17 +41,17 @@ const pages = computed(() => {
 
 function updateFreq(update_freq, update_freq_unit) {
 	const unitRef = {
-		minute: "分",
-		hour: "時",
-		day: "天",
-		week: "週",
-		month: "月",
-		year: "年",
+		minute: t("分"),
+		hour: t("時"),
+		day: t("天"),
+		week: t("週"),
+		month: t("月"),
+		year: t("年"),
 	};
 	if (update_freq == 0 || !update_freq) {
-		return "不定期更新";
+		return t("不定期更新");
 	}
-	return `每${update_freq}${unitRef[update_freq_unit]}更新`;
+	return `${t("每")}${update_freq}${unitRef[update_freq_unit]}${t("更新")}`;
 }
 
 function parseTime(time) {
@@ -126,7 +127,7 @@ onMounted(() => {
         >cancel</span>
       </div>
       <button @click="handleNewQuery">
-        搜尋
+        {{ $t("搜尋") }}
       </button>
       <!-- <button @click="showAdminAddComponent">
         新增組件
@@ -165,9 +166,11 @@ onMounted(() => {
             Index
           </TableHeader>
           <TableHeader min-width="200px">
-            名稱
+            {{ $t("名稱") }}
           </TableHeader>
-          <TableHeader>狀態</TableHeader>
+          <TableHeader>
+            {{ $t("狀態") }}
+          </TableHeader>
           <TableHeader
             :sort="true"
             :mode="
@@ -178,16 +181,20 @@ onMounted(() => {
             min-width="150px"
             @sort="handleSort('source')"
           >
-            資料來源
+            {{ $t("資料來源") }}
           </TableHeader>
           <TableHeader min-width="165px">
-            圖表類型
+            {{ $t("圖表類型") }}
           </TableHeader>
           <TableHeader min-width="165px">
-            地圖類型
+            {{ $t("地圖類型") }}
           </TableHeader>
-          <TableHeader>歷史資料</TableHeader>
-          <TableHeader>更新頻率</TableHeader>
+          <TableHeader>
+            {{ $t("歷史資料") }}
+          </TableHeader>
+          <TableHeader>
+            {{ $t("更新頻率") }}
+          </TableHeader>
           <TableHeader
             :sort="true"
             :mode="
@@ -198,7 +205,7 @@ onMounted(() => {
             min-width="200px"
             @sort="handleSort('updated_at')"
           >
-            上次編輯
+            {{ $t("上次編輯") }}
           </TableHeader>
         </tr>
       </thead>
@@ -213,11 +220,11 @@ onMounted(() => {
               <span>settings</span>
             </button>
           </td>
-          <td>{{ component.city }}</td>
-          <td>{{ component.index }}</td>
-          <td>{{ component.name }}</td>
-          <td>啟動</td>
-          <td>{{ component.source }}</td>
+          <td>{{ $t(component.city) }}</td>
+          <td>{{ $t(component.index) }}</td>
+          <td>{{ $t(component.name) }}</td>
+          <td>{{ $t("啟動") }}</td>
+          <td>{{ $t(component.source) }}</td>
           <td>
             <div class="admineditcomponent-table-charts">
               <ComponentTag
@@ -281,7 +288,7 @@ onMounted(() => {
       >
         <div class="admineditcomponent-nocontent-content">
           <span>sentiment_very_dissatisfied</span>
-          <h2>發生錯誤，無法載入組件列表</h2>
+          <h2>{{ $t("發生錯誤，無法載入組件列表") }}</h2>
         </div>
       </div>
       <!-- 2-4. Components are loaded but there are none -->
@@ -291,7 +298,7 @@ onMounted(() => {
       >
         <div class="admineditcomponent-nocontent-content">
           <span>search_off</span>
-          <h2>查無符合篩選條件的公開組件</h2>
+          <h2>{{ $t("查無符合篩選條件的公開組件") }}</h2>
         </div>
       </div>
     </table>
@@ -300,7 +307,7 @@ onMounted(() => {
       v-if="adminStore.components.length !== 0"
       class="admineditcomponent-control"
     >
-      <label for="pagesize">每頁顯示</label>
+      <label for="pagesize">{{ $t("每頁顯示") }}</label>
       <select
         v-model="searchParams.pagesize"
         @change="handleNewQuery"
@@ -322,7 +329,7 @@ onMounted(() => {
           :class="{ active: page === searchParams.pagenum }"
           @click="handleNewPage(page)"
         >
-          {{ page }}
+          {{ $t(page) }}
         </button>
       </div>
     </div>

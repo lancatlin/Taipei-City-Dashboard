@@ -94,7 +94,7 @@ onMounted(() => {
           @change="handleNewQuery"
         >
         <CustomCheckBox :for="status">
-          {{ status }}
+          {{ $t(status) }}
         </CustomCheckBox>
       </div>
     </div>
@@ -114,13 +114,13 @@ onMounted(() => {
             ID
           </TableHeader>
           <TableHeader min-width="300px">
-            標題
+            {{ $t("標題") }}
           </TableHeader>
           <TableHeader min-width="350px">
-            系統標籤
+            {{ $t("系統標籤") }}
           </TableHeader>
           <TableHeader min-width="110px">
-            狀態
+            {{ $t("狀態") }}
           </TableHeader>
           <TableHeader
             :sort="true"
@@ -132,10 +132,10 @@ onMounted(() => {
             min-width="200px"
             @sort="handleSort('created_at')"
           >
-            開立時間
+            {{ $t("開立時間") }}
           </TableHeader>
           <TableHeader min-width="110px">
-            上次編輯人
+            {{ $t("上次編輯人") }}
           </TableHeader>
           <TableHeader
             :sort="true"
@@ -147,7 +147,7 @@ onMounted(() => {
             min-width="200px"
             @sort="handleSort('updated_at')"
           >
-            上次編輯
+            {{ $t("上次編輯") }}
           </TableHeader>
         </tr>
       </thead>
@@ -162,12 +162,12 @@ onMounted(() => {
               <span>edit_note</span>
             </button>
           </td>
-          <td>{{ issue.id }}</td>
-          <td>{{ issue.title }}</td>
-          <td>{{ issue.context ? issue.context : "無" }}</td>
-          <td>{{ issue.status }}</td>
+          <td>{{ $t(issue.id) }}</td>
+          <td>{{ $t(issue.title) }}</td>
+          <td>{{ issue.context ? $t(issue.context) : $t("無") }}</td>
+          <td>{{ $t(issue.status) }}</td>
           <td>{{ parseTime(issue.created_at) }}</td>
-          <td>{{ issue.updated_by }}</td>
+          <td>{{ $t(issue.updated_by) }}</td>
           <td>{{ parseTime(issue.updated_at) }}</td>
         </tr>
       </tbody>
@@ -187,7 +187,7 @@ onMounted(() => {
       >
         <div class="adminissue-nocontent-content">
           <span>sentiment_very_dissatisfied</span>
-          <h2>發生錯誤，無法載入問題列表</h2>
+          <h2>{{ $t("發生錯誤，無法載入問題列表") }}</h2>
         </div>
       </div>
       <!-- 2-4. Issues are loaded but there are none -->
@@ -197,7 +197,7 @@ onMounted(() => {
       >
         <div class="adminissue-nocontent-content">
           <span>search_off</span>
-          <h2>查無符合篩選條件的問題</h2>
+          <h2>{{ $t("查無符合篩選條件的問題") }}</h2>
         </div>
       </div>
     </table>
@@ -206,7 +206,7 @@ onMounted(() => {
       v-if="adminStore.issues.length !== 0"
       class="adminissue-control"
     >
-      <label for="pagesize">每頁顯示</label>
+      <label for="pagesize">{{ $t("每頁顯示") }}</label>
       <select
         v-model="searchParams.pagesize"
         @change="handleNewQuery"
@@ -228,7 +228,7 @@ onMounted(() => {
           :class="{ active: page === searchParams.pagenum }"
           @click="handleNewPage(page)"
         >
-          {{ page }}
+          {{ $t(page) }}
         </button>
       </div>
     </div>

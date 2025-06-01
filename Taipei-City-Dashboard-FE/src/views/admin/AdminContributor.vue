@@ -90,19 +90,19 @@ onMounted(() => {
             ID
           </TableHeader>
           <TableHeader min-width="150px">
-            名稱
+            {{ $t("名稱") }}
           </TableHeader>
           <TableHeader min-width="150px">
-            圖片
+            {{ $t("圖片") }}
           </TableHeader>
           <TableHeader min-width="200px">
-            連結
+            {{ $t("連結") }}
           </TableHeader>
           <TableHeader min-width="200px">
-            建立時間
+            {{ $t("建立時間") }}
           </TableHeader>
           <TableHeader min-width="200px">
-            更新時間
+            {{ $t("更新時間") }}
           </TableHeader>
         </tr>
       </thead>
@@ -144,7 +144,7 @@ onMounted(() => {
       >
         <div class="admincontributor-nocontent-content">
           <span>sentiment_very_dissatisfied</span>
-          <h2>發生錯誤，無法載入貢獻者列表</h2>
+          <h2>{{ $t("發生錯誤，無法載入貢獻者列表") }}</h2>
         </div>
       </div>
       <!-- 2-4. contributors are loaded but there are none -->
@@ -154,13 +154,13 @@ onMounted(() => {
       >
         <div class="admincontributor-nocontent-content">
           <span>search_off</span>
-          <h2>查無符合篩選條件的貢獻者</h2>
+          <h2>{{ $t("查無符合篩選條件的貢獻者") }}</h2>
         </div>
       </div>
     </table>
     <!-- 3. Records per page and pagination control -->
     <div class="admincontributor-control">
-      <label for="pagesize">每頁顯示</label>
+      <label for="pagesize">{{ $t("每頁顯示") }}</label>
       <select
         v-model="searchParams.pagesize"
         @change="handleNewQuery"
@@ -182,7 +182,7 @@ onMounted(() => {
           :class="{ active: page === searchParams.pagenum }"
           @click="handleNewPage(page)"
         >
-          {{ page }}
+          {{ $t(page) }}
         </button>
       </div>
     </div>

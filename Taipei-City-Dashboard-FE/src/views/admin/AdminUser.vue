@@ -82,7 +82,7 @@ onMounted(() => {
         <input
           v-model="searchParams.searchbyname"
           type="text"
-          placeholder="以用戶名稱搜尋"
+          :placeholder="$t('以用戶名稱搜尋')"
         >
         <span
           v-if="searchParams.searchbyname !== ''"
@@ -93,7 +93,7 @@ onMounted(() => {
         <input
           v-model="searchParams.searchbyid"
           type="text"
-          placeholder="以用戶ID搜尋"
+          :placeholder="$t('以用戶ID搜尋')"
         >
         <span
           v-if="searchParams.searchbyid !== ''"
@@ -101,7 +101,7 @@ onMounted(() => {
         >cancel</span>
       </div>
       <button @click="handleNewQuery">
-        搜尋
+        {{ $t("搜尋") }}
       </button>
     </div>
     <!-- 2. The main table displaying all public users -->
@@ -120,10 +120,10 @@ onMounted(() => {
             ID
           </TableHeader>
           <TableHeader min-width="150px">
-            名稱
+            {{ $t("名稱") }}
           </TableHeader>
           <TableHeader min-width="150px">
-            帳號
+            {{ $t("帳號") }}
           </TableHeader>
           <TableHeader
             min-width="100px"
@@ -135,7 +135,7 @@ onMounted(() => {
             "
             @sort="handleSort('is_admin')"
           >
-            身份
+            {{ $t("身份") }}
           </TableHeader>
           <TableHeader
             min-width="120px"
@@ -147,7 +147,7 @@ onMounted(() => {
             "
             @sort="handleSort('is_whitelist')"
           >
-            API白名單
+            {{ $t("API白名單") }}
           </TableHeader>
           <TableHeader
             min-width="120px"
@@ -159,7 +159,7 @@ onMounted(() => {
             "
             @sort="handleSort('is_blacked')"
           >
-            API黑名單
+            {{ $t("API黑名單") }}
           </TableHeader><TableHeader
             :sort="true"
             :mode="
@@ -170,7 +170,7 @@ onMounted(() => {
             min-width="200px"
             @sort="handleSort('login_at')"
           >
-            上次登入
+            {{ $t("上次登入") }}
           </TableHeader>
           <TableHeader
             min-width="120px"
@@ -182,10 +182,10 @@ onMounted(() => {
             "
             @sort="handleSort('is_active')"
           >
-            啟用狀態
+            {{ $t("啟用狀態") }}
           </TableHeader>
           <TableHeader min-width="200px">
-            停用時間
+            {{ $t("停用時間") }}
           </TableHeader>
         </tr>
       </thead>
@@ -203,7 +203,7 @@ onMounted(() => {
           <td>{{ user.user_id }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.account ? user.account : user.TpAccount }}</td>
-          <td>{{ user.is_admin ? "管理員" : "一般用戶" }}</td>
+          <td>{{ user.is_admin ? $t("管理員") : $t("一般用戶") }}</td>
           <td>
             <span>{{
               user.is_whitelist ? "check_circle" : "cancel"
@@ -224,7 +224,7 @@ onMounted(() => {
             {{
               user.expired_at && !user.is_active
                 ? parseTime(user.expired_at)
-                : "未被停用"
+                : $t("未被停用")
             }}
           </td>
         </tr>
@@ -245,7 +245,7 @@ onMounted(() => {
       >
         <div class="adminuser-nocontent-content">
           <span>sentiment_very_dissatisfied</span>
-          <h2>發生錯誤，無法載入用戶列表</h2>
+          <h2>{{ $t("發生錯誤，無法載入用戶列表") }}</h2>
         </div>
       </div>
       <!-- 2-4. users are loaded but there are none -->
@@ -255,13 +255,13 @@ onMounted(() => {
       >
         <div class="adminuser-nocontent-content">
           <span>search_off</span>
-          <h2>查無符合篩選條件的用戶</h2>
+          <h2>{{ $t("查無符合篩選條件的用戶") }}</h2>
         </div>
       </div>
     </table>
     <!-- 3. Records per page and pagination control -->
     <div class="adminuser-control">
-      <label for="pagesize">每頁顯示</label>
+      <label for="pagesize">{{ $t("每頁顯示") }}</label>
       <select
         v-model="searchParams.pagesize"
         @change="handleNewQuery"
@@ -283,7 +283,7 @@ onMounted(() => {
           :class="{ active: page === searchParams.pagenum }"
           @click="handleNewPage(page)"
         >
-          {{ page }}
+          {{ $t(page) }}
         </button>
       </div>
     </div>

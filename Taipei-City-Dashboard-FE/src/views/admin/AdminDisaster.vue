@@ -118,7 +118,7 @@ onMounted(() => {
 <template>
   <div class="admindisaster">
     <!-- 1. Checkboxes to filter through different issue types -->
-    <h2>本功能尚測試中，未對一般用戶開放</h2>
+    <h2>{{ $t("本功能尚測試中，未對一般用戶開放") }}</h2>
     <div class="admindisaster-filter">
       <div
         v-for="status in statuses"
@@ -133,7 +133,7 @@ onMounted(() => {
           @change="handleNewQuery"
         >
         <CustomCheckBox :for="status">
-          {{ status }}
+          {{ $t(status) }}
         </CustomCheckBox>
       </div>
     </div>
@@ -153,19 +153,19 @@ onMounted(() => {
             ID
           </TableHeader>
           <TableHeader min-width="150px">
-            種類
+            {{ $t("種類") }}
           </TableHeader>
           <TableHeader min-width="250px">
-            描述
+            {{ $t("描述") }}
           </TableHeader>
           <TableHeader min-width="320px">
-            地點
+            {{ $t("地點") }}
           </TableHeader>
           <TableHeader min-width="180px">
-            時間
+            {{ $t("時間") }}
           </TableHeader>
           <TableHeader min-width="200px">
-            審核
+            {{ $t("審核") }}
           </TableHeader>
         </tr>
       </thead>
@@ -191,12 +191,12 @@ onMounted(() => {
               cancel
             </span>
           </td>
-          <td>{{ disaster.ID }}</td>
-          <td>{{ disaster.inctype }}</td>
+          <td>{{ $t(disaster.ID) }}</td>
+          <td>{{ $t(disaster.inctype) }}</td>
           <td class="admindisaster-table-description">
-            {{ disaster.description }}
+            {{ $t(disaster.description) }}
           </td>
-          <td>{{ disaster.place }}</td>
+          <td>{{ $t(disaster.place) }}</td>
           <td>{{ parseTime(disaster.reportTime) }}</td>
           <td class="admindisaster-table-review">
             <div
@@ -227,13 +227,13 @@ onMounted(() => {
                 class="reviewBtn"
                 @click="handleReview(disaster.ID, 1)"
               >
-                通過
+                {{ $t("通過") }}
               </button>
               <button
                 class="reviewBtn"
                 @click="handleReview(disaster.ID, 0)"
               >
-                拒絕
+                {{ $t("拒絕") }}
               </button>
             </div>
           </td>
@@ -245,7 +245,7 @@ onMounted(() => {
         class="admindisaster-nocontent"
       >
         <div class="admindisaster-nocontent-content">
-          <h2>載入中...</h2>
+          <h2>{{ $t("載入中...") }}</h2>
         </div>
       </div>
       <!-- 2-3. An Error occurred -->
@@ -255,7 +255,7 @@ onMounted(() => {
       >
         <div class="admindisaster-nocontent-content">
           <span>sentiment_very_dissatisfied</span>
-          <h2>發生錯誤，無法載入問題列表</h2>
+          <h2>{{ $t("發生錯誤，無法載入問題列表") }}</h2>
         </div>
       </div>
       <!-- 2-4. Disasters are loaded but there are none -->
@@ -265,7 +265,7 @@ onMounted(() => {
       >
         <div class="admindisaster-nocontent-content">
           <span>search_off</span>
-          <h2>查無符合篩選條件的災害</h2>
+          <h2>{{ $t("查無符合篩選條件的災害") }}</h2>
         </div>
       </div>
     </table>
@@ -274,7 +274,7 @@ onMounted(() => {
       v-if="adminStore.disasters.length !== 0"
       class="admindisaster-control"
     >
-      <label for="pagesize">每頁顯示</label>
+      <label for="pagesize">{{ $t("每頁顯示") }}</label>
       <select
         v-model="searchParams.pagesize"
         @change="handleNewQuery"
@@ -296,7 +296,7 @@ onMounted(() => {
           :class="{ active: page === searchParams.pagenum }"
           @click="handleNewPage(page)"
         >
-          {{ page }}
+          {{ $t(page) }}
         </button>
       </div>
     </div>

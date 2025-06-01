@@ -56,7 +56,7 @@ onMounted(() => {
     <!-- 1. Button to open a dialog to add a new public dashboard -->
     <div class="admindashboard-control">
       <button @click="handleAddDashboard">
-        新增公開儀表板
+        {{ $t("新增公開儀表板") }}
       </button>
     </div>
     <!-- 2. Table to show all public dashboards -->
@@ -71,16 +71,16 @@ onMounted(() => {
             Index
           </TableHeader>
           <TableHeader min-width="180px">
-            名稱
+            {{ $t("名稱") }}
           </TableHeader>
           <TableHeader min-width="480px">
-            組件
+            {{ $t("組件") }}
           </TableHeader>
           <TableHeader min-width="40px">
-            圖示
+            {{ $t("圖示") }}
           </TableHeader>
           <TableHeader min-width="200px">
-            上次編輯
+            {{ $t("上次編輯") }}
           </TableHeader>
         </tr>
       </thead>
@@ -98,8 +98,8 @@ onMounted(() => {
               <span>delete</span>
             </button>
           </td>
-          <td>{{ dashboard.index }}</td>
-          <td>{{ dashboard.name }}</td>
+          <td>{{ $t(dashboard.index) }}</td>
+          <td>{{ $t(dashboard.name) }}</td>
           <td>{{ dashboard.components }}</td>
           <td>
             <span>{{ dashboard.icon }}</span>
@@ -123,7 +123,7 @@ onMounted(() => {
       >
         <div class="admindashboard-nocontent-content">
           <span>sentiment_very_dissatisfied</span>
-          <h2>發生錯誤，無法載入儀表板列表</h2>
+          <h2>{{ $t("發生錯誤，無法載入儀表板列表") }}</h2>
         </div>
       </div>
       <!-- 2-4. Dashboards are loaded but there are none -->
@@ -133,7 +133,7 @@ onMounted(() => {
       >
         <div class="admindashboard-nocontent-content">
           <span>search_off</span>
-          <h2>查無公開儀表板</h2>
+          <h2>{{ $t("查無公開儀表板") }}</h2>
         </div>
       </div>
     </table>

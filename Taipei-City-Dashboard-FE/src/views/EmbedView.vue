@@ -95,7 +95,7 @@ onMounted(async () => {
       class="embedview-error"
     >
       <span>warning</span>
-      <p>查無組件，請確認組件ID是否正確</p>
+      <p>{{ $t("查無組件，請確認組件ID是否正確") }}</p>
       <p>Component Not Found</p>
     </div>
   </div>

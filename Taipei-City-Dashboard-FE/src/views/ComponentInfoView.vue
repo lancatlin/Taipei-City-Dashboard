@@ -1,10 +1,10 @@
 <!-- Developed By Taipei Urban Intelligence Center 2023-2024 -->
-<!-- 
+<!--
 Lead Developer:  Igor Ho (Full Stack Engineer)
 Data Pipelines:  Iima Yu (Data Scientist)
 Design and UX: Roy Lin (Fmr. Consultant), Chu Chen (Researcher)
 Systems: Ann Shih (Systems Engineer)
-Testing: Jack Huang (Data Scientist), Ian Huang (Data Analysis Intern) 
+Testing: Jack Huang (Data Scientist), Ian Huang (Data Analysis Intern)
 -->
 <!-- Department of Information Technology, Taipei City Government -->
 
@@ -59,14 +59,14 @@ onMounted(() => {
       @click="router.back()"
     >
       <span>arrow_circle_left</span>
-      <p>返回儀表板</p>
+      <p>{{ $t("返回儀表板") }}</p>
     </button>
     <RouterLink
       v-else
       to="/component"
     >
       <span>arrow_circle_left</span>
-      <p>返回組件瀏覽平台</p>
+      <p>{{ $t("返回組件瀏覽平台") }}</p>
     </RouterLink>
   </div>
   <!-- 1. If the component is found -->
@@ -120,16 +120,16 @@ onMounted(() => {
         <!-- 1-2. View the component's information -->
         <div class="componentinfoview-content">
           <div :style="{ overflowY: 'scroll' }">
-            <h3>組件 ID | Index | City</h3>
+            <h3>{{ $t("組件") }} ID | Index | City</h3>
             <p>
               {{
-                ` ID: ${item.id}｜Index: ${item.index}｜City: ${item.city}`
+                ` ID: ${t(item.id)}｜Index: ${t(item.index)}｜City: ${t(item.city)}`
               }}
             </p>
-            <h3>組件說明</h3>
-            <p>{{ item.long_desc }}</p>
-            <h3>範例情境</h3>
-            <p>{{ item.use_case }}</p>
+            <h3>{{ $t("組件說明") }}</h3>
+            <p>{{ $t(item.long_desc) }}</p>
+            <h3>{{ $t("範例情境") }}</h3>
+            <p>{{ $t(item.use_case) }}</p>
           </div>
           <div class="componentinfoview-content-control">
             <button
@@ -142,7 +142,7 @@ onMounted(() => {
                 )
               "
             >
-              <span>flag</span>回報
+              <span>flag</span>{{ $t("回報") }}
             </button>
             <button
               v-if="
@@ -151,7 +151,7 @@ onMounted(() => {
               "
               @click="dialogStore.showDialog('downloadData')"
             >
-              <span>download</span>下載
+              <span>download</span>{{ $t("下載") }}
             </button>
             <button @click="dialogStore.showDialog('embedComponent')">
               <span>code</span>內嵌
@@ -163,7 +163,7 @@ onMounted(() => {
           v-if="item.history_data"
           class="componentinfoview-history"
         >
-          <h3>歷史資料</h3>
+          <h3>{{ $t("歷史資料") }}</h3>
           <HistoryChart
             :chart_config="item.chart_config"
             :series="item.history_data"
@@ -181,7 +181,7 @@ onMounted(() => {
             v-if="item.links?.length > 0"
             class="componentinfoview-source-links"
           >
-            <h3>相關資料</h3>
+            <h3>{{ $t("相關資料") }}</h3>
             <a
               v-for="(link, index) in item.links"
               :key="`${link}-${index}`"
@@ -195,7 +195,7 @@ onMounted(() => {
             v-if="item.contributors"
             class="componentinfoview-source-contributors"
           >
-            <h3>協作者</h3>
+            <h3>{{ $t("協作者") }}</h3>
             <div>
               <div
                 v-for="contributor in item
@@ -249,7 +249,7 @@ onMounted(() => {
       >
         <div class="componentinfoview-nodashboard-content">
           <span>sentiment_very_dissatisfied</span>
-          <h2>發生錯誤，無法載入。請確認組件Index是否正確。</h2>
+          <h2>{{ $t("發生錯誤，無法載入。請確認組件Index是否正確。") }}</h2>
         </div>
       </div>
     </template>

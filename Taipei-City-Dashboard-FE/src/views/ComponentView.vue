@@ -1,10 +1,10 @@
 <!-- Developed By Taipei Urban Intelligence Center 2023-2024 -->
-<!-- 
+<!--
 Lead Developer:  Igor Ho (Full Stack Engineer)
 Data Pipelines:  Iima Yu (Data Scientist)
 Design and UX: Roy Lin (Fmr. Consultant), Chu Chen (Researcher)
 Systems: Ann Shih (Systems Engineer)
-Testing: Jack Huang (Data Scientist), Ian Huang (Data Analysis Intern) 
+Testing: Jack Huang (Data Scientist), Ian Huang (Data Analysis Intern)
 -->
 <!-- Department of Information Technology, Taipei City Government -->
 
@@ -49,7 +49,7 @@ onMounted(() => {
     <div>
       <input
         v-model="searchParams.searchbyname"
-        placeholder="以名稱搜尋"
+        :placeholder="$t('以名稱搜尋')"
         @keypress.enter="handleNewQuery"
       >
       <span
@@ -63,7 +63,7 @@ onMounted(() => {
       >cancel</span>
     </div>
     <button @click="handleNewQuery">
-      搜尋
+      {{ $t("搜尋") }}
     </button>
   </div>
   <!-- 1. If the components are loaded -->
@@ -125,7 +125,7 @@ onMounted(() => {
   >
     <div class="componentview-nodashboard-content">
       <span>sentiment_very_dissatisfied</span>
-      <h2>發生錯誤，無法載入</h2>
+      <h2>{{ $t("發生錯誤，無法載入") }}</h2>
     </div>
   </div>
   <!-- 4. If there are no components -->
@@ -135,8 +135,8 @@ onMounted(() => {
   >
     <div class="componentview-nodashboard-content">
       <span>search_off</span>
-      <h2>查無組件</h2>
-      <p>請重新搜尋或更改篩選條件</p>
+      <h2>{{ $t("查無組件") }}</h2>
+      <p>{{ $t("請重新搜尋或更改篩選條件") }}</p>
     </div>
   </div>
 </template>
