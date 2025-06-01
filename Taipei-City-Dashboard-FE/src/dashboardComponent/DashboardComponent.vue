@@ -486,19 +486,19 @@ function returnChartComponent(name, svg) {
         <ComponentTag
           v-if="config.map_filter && config.map_config?.length > 0"
           :icon="mode === 'preview' ? '' : 'tune'"
-          text="篩選地圖"
+          :text="$t('篩選地圖')"
           class="hide-if-mobile"
         />
         <ComponentTag
           v-if="config.map_config && config.map_config[0] !== null && config.map_config?.length > 0"
           :icon="mode === 'preview' ? '' : 'map'"
-          text="空間資料"
+          :text="$t('空間資料')"
           class="hide-if-mobile"
         />
         <ComponentTag
           v-if="config.history_config?.range"
           :icon="mode === 'preview' ? '' : 'insights'"
-          text="歷史資料"
+          :text="$t('歷史資料')"
           class="history-tag"
         />
       </div>

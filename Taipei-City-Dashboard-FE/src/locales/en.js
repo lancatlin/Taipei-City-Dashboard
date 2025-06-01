@@ -53,4 +53,8 @@ export default {
 	'消防局': 'Fire Station',
 	'緊急應變設施': 'Emergency response facilities',
 	'緊急應變避難所': 'Emergency Shelters',
+	'雙北': 'Metro Taipei',
+	'空間資料': 'Geospatial Data',
+	'篩選地圖': 'Filter Map',
+	'歷史資料': 'Historical Data',
 };
