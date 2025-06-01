@@ -4,6 +4,7 @@
 <!-- eslint-disable no-mixed-spaces-and-tabs -->
 <script setup>
 import { computed, ref } from "vue";
+import { t } from "../../utils/i18n.js";
 
 // register the five required props
 const props = defineProps([
@@ -112,7 +113,7 @@ const cy = 115;
 // index: a
 const labels = Array.from({ length: anumTotal.value }, (_, index) => {
 	return {
-		name: parseSeries.value.series[index].a,
+		name: t(parseSeries.value.series[index].a),
 		x:
 			cx +
 			rtext * Math.sin(((index + 0.5) * 2 * Math.PI) / anumTotal.value),
@@ -336,7 +337,7 @@ function handleLegendSelection(index) {
           fill="#888787"
           font-size="12"
         >
-          {{ label.name }}
+          {{ $t(label.name) }}
         </text>
       </g>
       <circle
@@ -364,7 +365,7 @@ function handleLegendSelection(index) {
             backgroundColor: props.chart_config.color[index],
           }"
         />
-        <p>{{ serie.name }}</p>
+        <p>{{ $t(serie.name) }}</p>
       </div>
     </div>
     <Teleport to="body">
@@ -375,12 +376,12 @@ function handleLegendSelection(index) {
         :style="tooltipPosition"
       >
         <h6>
-          {{ showedData[aHovered].a
+          {{ $t(showedData[aHovered].a)
           }}{{ props.chart_config.categories && "-"
-          }}{{ showedData[aHovered].data[rHovered].r }}
+          }}{{ $t(showedData[aHovered].data[rHovered].r) }}
         </h6>
-        <span>{{ showedData[aHovered].data[rHovered].value
-        }}{{ chart_config.unit }}</span>
+        <span>{{ $t(showedData[aHovered].data[rHovered].value)
+        }}{{ $t(chart_config.unit) }}</span>
       </div>
     </Teleport>
   </div>

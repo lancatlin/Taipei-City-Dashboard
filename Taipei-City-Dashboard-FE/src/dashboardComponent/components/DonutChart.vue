@@ -3,6 +3,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import VueApexCharts from "vue3-apexcharts";
+import { t } from "../../utils/i18n.js";
 
 const props = defineProps([
 	"chart_config",
@@ -48,9 +49,9 @@ const parsedLabels = computed(() => {
 	}
 	let output = [];
 	for (let i = 0; i < steps.value; i++) {
-		output.push(toParse[i].x);
+		output.push(t(toParse[i].x));
 	}
-	output.push("其他");
+	output.push(t("其他"));
 	return output;
 });
 const sum = computed(() => {
@@ -72,7 +73,7 @@ const chartOptions = ref({
 			{ seriesIndex, w }
 		) {
 			let value = w.globals.labels[seriesIndex];
-			return value.length > 7 ? value.slice(0, 6) + "..." : value;
+			return value.length > 7 ? t(value.slice(0, 6) + "...") : t(value);
 		},
 	},
 	labels: parsedLabels,
@@ -105,11 +106,11 @@ const chartOptions = ref({
 			return (
 				'<div class="chart-tooltip">' +
 				"<h6>" +
-				w.globals.labels[seriesIndex] +
+				t(w.globals.labels[seriesIndex]) +
 				"</h6>" +
 				"<span>" +
-				series[seriesIndex] +
-				` ${props.chart_config.unit}` +
+				t(series[seriesIndex]) +
+				` ${t(props.chart_config.unit)}` +
 				"</span>" +
 				"</div>"
 			);
@@ -169,7 +170,7 @@ function handleDataSelection(_e, _chartContext, config) {
       @data-point-selection="handleDataSelection"
     />
     <div class="donutchart-title">
-      <h5>總合</h5>
+      <h5>{{ $t("總合") }}</h5>
       <h6>{{ sum }}</h6>
     </div>
   </div>

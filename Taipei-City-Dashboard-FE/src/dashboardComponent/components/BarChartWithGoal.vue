@@ -113,6 +113,9 @@ const chartOptions = ref({
 		},
 		labels: {
 			show: true,
+			formatter: function (value) {
+				return t(value);
+			},
 		},
 		type: "category",
 	},

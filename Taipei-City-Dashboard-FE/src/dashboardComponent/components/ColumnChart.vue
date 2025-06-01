@@ -3,6 +3,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import VueApexCharts from "vue3-apexcharts";
+import { t } from "../../utils/i18n.js";
 
 const props = defineProps([
 	"chart_config",
@@ -46,13 +47,13 @@ const chartOptions = ref({
 		zoom: {
 			allowMouseWheelZoom: false,
 		},
-		toolbar: isLargeDataSet.value 
+		toolbar: isLargeDataSet.value
 			? {
 				show: true,
 				tools: {
 					download: false,
 					pan: false,
-					reset: "<p>" + "重置" + "</p>",
+					reset: "<p>" + t("重置") + "</p>",
 					zoomin: false,
 					zoomout: false,
 				}
@@ -103,16 +104,16 @@ const chartOptions = ref({
 			return (
 				'<div class="chart-tooltip">' +
 					"<h6>" +
-						w.globals.labels[dataPointIndex] +
+						t(w.globals.labels[dataPointIndex]) +
 						`${
 							props.chart_config.categories
-								? "-" + w.globals.seriesNames[seriesIndex]
+								? "-" + t(w.globals.seriesNames[seriesIndex])
 								: ""
 						}` +
 					"</h6>" +
 					"<span>" +
-						series[seriesIndex][dataPointIndex] +
-						` ${props.chart_config.unit}` +
+						t(series[seriesIndex][dataPointIndex]) +
+						` ${t(props.chart_config.unit)}` +
 					"</span>" +
 				"</div>"
 			);
@@ -130,6 +131,9 @@ const chartOptions = ref({
 			: [],
 		labels: {
 			offsetY: 2,
+			formatter: function (value) {
+				return t(value);
+			},
 		},
 		type: "category",
 	},
@@ -213,7 +217,7 @@ function resetWidth() {
         class="columnChart-toolbar-item reset"
         @click="resetWidth"
       >
-        重置
+        {{ t("重置") }}
       </p>
     </div>
     <VueApexCharts

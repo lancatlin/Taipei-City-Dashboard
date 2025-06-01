@@ -33,6 +33,9 @@ const chartOptions = ref({
 	dataLabels: {
 		offsetX: 20,
 		textAnchor: "start",
+		formatter: function (value) {
+			return t(value);
+		},
 	},
 	grid: {
 		show: false,

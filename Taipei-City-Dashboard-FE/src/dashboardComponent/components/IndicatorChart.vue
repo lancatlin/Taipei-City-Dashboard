@@ -3,6 +3,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import VueApexCharts from "vue3-apexcharts";
+import { t } from "../../utils/i18n.js";
 
 const props = defineProps([
 	"chart_config",
@@ -83,12 +84,12 @@ const chartOptions = ref({
 			return (
 				'<div class="chart-tooltip">' +
 				"<h6>" +
-				w.globals.labels[dataPointIndex] +
-				`${"-" + w.globals.seriesNames[seriesIndex]}` +
+				t(w.globals.labels[dataPointIndex]) +
+				`${"-" + t(w.globals.seriesNames[seriesIndex])}` +
 				"</h6>" +
 				"<span>" +
-				props.series[seriesIndex].data[dataPointIndex] +
-				` ${props.chart_config.unit}` +
+				t(props.series[seriesIndex].data[dataPointIndex]) +
+				` ${t(props.chart_config.unit)}` +
 				"</span>" +
 				"</div>"
 			);
@@ -104,6 +105,7 @@ const chartOptions = ref({
 		categories: props.chart_config.categories,
 		labels: {
 			offsetY: 2,
+			formatter: (value) => t(value),
 		},
 		type: "category",
 	},

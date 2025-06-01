@@ -3,6 +3,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import VueApexCharts from "vue3-apexcharts";
+import { t } from "../../utils/i18n.js";
 
 const props = defineProps([
 	"chart_config",
@@ -128,11 +129,11 @@ const chartOptions = ref({
 			return (
 				'<div class="chart-tooltip">' +
 				"<h6>" +
-				`${w.globals.labels[dataPointIndex]}-${w.globals.seriesNames[seriesIndex]}` +
+				`${t(w.globals.labels[dataPointIndex])}-${t(w.globals.seriesNames[seriesIndex])}` +
 				"</h6>" +
 				"<span>" +
-				`${series[seriesIndex][dataPointIndex]}` +
-				`${props.chart_config.unit}` +
+				`${t(series[seriesIndex][dataPointIndex])}` +
+				`${t(props.chart_config.unit)}` +
 				"</span>" +
 				"</div>"
 			);
@@ -151,7 +152,7 @@ const chartOptions = ref({
 		labels: {
 			offsetY: 5,
 			formatter: function (value) {
-				return value.length > 7 ? value.slice(0, 6) + "..." : value;
+				return value.length > 7 ? t(value.slice(0, 6) + "...") : t(value);
 			},
 		},
 		tooltip: {
@@ -214,8 +215,8 @@ function handleDataSelection(_e, _chartContext, config) {
     class="heatmapchart"
   >
     <div class="heatmapchart-title">
-      <h5>總合</h5>
-      <h6>{{ heatmapData.sum }} {{ chart_config.unit }}</h6>
+      <h5>{{ $t("總合") }}</h5>
+      <h6>{{ heatmapData.sum }} {{ $t(chart_config.unit) }}</h6>
     </div>
     <VueApexCharts
       width="100%"

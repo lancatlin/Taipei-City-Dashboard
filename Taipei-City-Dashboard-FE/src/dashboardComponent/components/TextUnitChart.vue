@@ -33,13 +33,13 @@ const props = defineProps([
           class="TextUnitChart__name"
           :style="{ color: props.chart_config.color[0] }"
         >
-          {{ item.name }}
+          {{ $t(item.name) }}
         </div>
         <div>
           <span
             class="TextUnitChart__value"
             :style="{ color: props.chart_config.color[1] }"
-          >{{ item.data[0] }}</span>
+          >{{ $t(item.data[0]) }}</span>
           <span
             class="TextUnitChart__unit"
             :style="{ color: props.chart_config.color[2] }"
@@ -76,12 +76,12 @@ const props = defineProps([
 		&:not(:nth-child(2n)) {
 			border-right: 1px solid var(--color-border);
 		}
-    
+
 		// 移除最後一個項目的底部邊框
 		&:last-child {
 			border-bottom: none;
 		}
-    
+
 		// 倒數第二個如果在右邊（偶數位置），移除底部邊框
 		&:nth-last-child(2):nth-child(2n-1) {
 			border-bottom: none;

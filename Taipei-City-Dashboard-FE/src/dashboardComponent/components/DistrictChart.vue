@@ -227,14 +227,14 @@ function handleDataSelection(index) {
     class="districtchart"
   >
     <div class="districtchart-title">
-      <h5>總合</h5>
-      <h6>{{ districtData.sum }} {{ chart_config.unit }}</h6>
+      <h5>{{ $t("總合") }}</h5>
+      <h6>{{ districtData.sum }} {{ $t(chart_config.unit) }}</h6>
       <div class="districtchart-title-legend">
-        <p>多</p>
+        <p>{{ $t("多") }}</p>
         <div
           :style="{ backgroundColor: props.chart_config.color[0] }"
         />
-        <p>少</p>
+        <p>{{ $t("少") }}</p>
       </div>
     </div>
     <div class="districtchart-chart">
@@ -1157,9 +1157,9 @@ function handleDataSelection(index) {
           class="districtchart-chart-info chart-tooltip"
           :style="tooltipPosition"
         >
-          <h6>{{ targetDistrict }}</h6>
-          <span>{{ districtData[targetDistrict] }}
-            {{ chart_config.unit }}</span>
+          <h6>{{ $t(targetDistrict) }}</h6>
+          <span>{{ $t(districtData[targetDistrict]) }}
+            {{ $t(chart_config.unit) }}</span>
         </div>
       </Teleport>
     </div>

@@ -4,7 +4,7 @@
 import { ref } from "vue";
 // import { MapConfig, MapFilter } from "../utilities/componentConfig";
 import VueApexCharts from "vue3-apexcharts";
-
+import { t } from "../../utils/i18n.js";
 const props = defineProps(["chart_config", "activeChart", "series"]);
 
 // const emits = defineEmits([
@@ -62,11 +62,11 @@ const chartOptions = ref({
 				`${parseTime(
 					w.config.series[seriesIndex].data[dataPointIndex].x
 				)}` +
-				` - ${w.globals.seriesNames[seriesIndex]}` +
+				` - ${t(w.globals.seriesNames[seriesIndex])}` +
 				"</h6>" +
 				"<span>" +
-				series[seriesIndex][dataPointIndex] +
-				` ${props.chart_config.unit}` +
+				t(series[seriesIndex][dataPointIndex]) +
+				` ${t(props.chart_config.unit)}` +
 				"</span>" +
 				"</div>"
 			);

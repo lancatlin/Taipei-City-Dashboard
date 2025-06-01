@@ -75,8 +75,8 @@ const parsedSeries = computed(() => {
         <h5>
           {{
             item.name.length < 6
-              ? item.name
-              : `${item.name.slice(0, 4)}...`
+              ? t(item.name)
+              : `${t(item.name.slice(0, 4))}...`
           }}
         </h5>
         <!-- Will show a different style if the station is a terminal station -->
@@ -102,7 +102,7 @@ const parsedSeries = computed(() => {
                   : 'black',
             }"
           >
-            {{ line }}
+            {{ $t(line) }}
           </p>
           <p
             :style="{
@@ -114,7 +114,7 @@ const parsedSeries = computed(() => {
                   : 'black',
             }"
           >
-            {{ item.id.slice(-2) }}
+            {{ $t(item.id.slice(-2)) }}
           </p>
         </div>
         <MetroCarDensity
@@ -156,7 +156,7 @@ const parsedSeries = computed(() => {
       >
         <div class="metrochart-block-break">
           <div />
-          <p>{{ item.name }}</p>
+          <p>{{ $t(item.name) }}</p>
           <div />
         </div>
       </div>

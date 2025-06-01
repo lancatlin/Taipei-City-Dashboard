@@ -12,7 +12,6 @@ import bike_red from "../assets/map/bike_red.png";
 import cross_bold from "../assets/map/cross_bold.png";
 import cross_normal from "../assets/map/cross_normal.png";
 import cctv from "../assets/map/cctv.png";
-
 const props = defineProps([
 	"chart_config",
 	"series",
@@ -117,11 +116,11 @@ function handleDataSelection(index) {
         >
         <!-- If there is a value attached, show the value -->
         <div v-if="item.value">
-          <h5>{{ item.name }}</h5>
-          <h6>{{ item.value }} {{ chart_config.unit }}</h6>
+          <h5>{{ $t(item.name) }}</h5>
+          <h6>{{ $t(item.value) }} {{ $t(chart_config.unit) }}</h6>
         </div>
         <div v-else>
-          <h6>{{ item.name }}</h6>
+          <h6>{{ $t(item.name) }}</h6>
         </div>
       </button>
     </div>

@@ -3,6 +3,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import VueApexCharts from "vue3-apexcharts";
+import { t } from "../../utils/i18n.js";
 
 const props = defineProps([
 	"chart_config",
@@ -34,7 +35,7 @@ const chartOptions = ref({
 			val,
 			{ dataPointIndex }
 		) {
-			return dataPointIndex > 5 ? "" : val;
+			return dataPointIndex > 5 ? "" : t(val);
 		},
 	},
 	grid: {
@@ -65,11 +66,11 @@ const chartOptions = ref({
 			return (
 				'<div class="chart-tooltip">' +
 				"<h6>" +
-				w.globals.categoryLabels[dataPointIndex] +
+				t(w.globals.categoryLabels[dataPointIndex]) +
 				"</h6>" +
 				"<span>" +
-				series[seriesIndex][dataPointIndex] +
-				` ${props.chart_config.unit}` +
+				t(series[seriesIndex][dataPointIndex]) +
+				` ${t(props.chart_config.unit)}` +
 				"</span>" +
 				"</div>"
 			);
@@ -142,8 +143,8 @@ function handleDataSelection(_e, _chartContext, config) {
     class="treemapchart"
   >
     <div class="treemapchart-title">
-      <h5>總合</h5>
-      <h6>{{ sum }} {{ chart_config.unit }}</h6>
+      <h5>{{ $t("總合") }}</h5>
+      <h6>{{ sum }} {{ $t(chart_config.unit) }}</h6>
     </div>
     <VueApexCharts
       width="100%"

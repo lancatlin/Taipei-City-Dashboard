@@ -90,8 +90,8 @@ function updateMouseLocation(e) {
         class="iconPercentageChart__content"
       >
         <h2>
-          {{ item.name
-          }}<span
+          {{ $t(item.name) }}
+          <span
             class="iconPercentageChart__percentage"
             :style="{
               color:
@@ -106,7 +106,7 @@ function updateMouseLocation(e) {
           }}</span>
           ％
         </h2>
-        <p>總數：{{ item.data[activeIndex] }}{{ chart_config.unit }}</p>
+        <p>{{ $t("總數") }}: {{ $t(item.data[activeIndex]) }}{{ $t(chart_config.unit) }}</p>
       </div>
     </div>
     <!-- year buttons -->
@@ -120,7 +120,7 @@ function updateMouseLocation(e) {
         }"
         @click="updateChartData(index)"
       >
-        {{ item }}
+        {{ $t(item) }}
       </button>
     </div>
     <!-- chart icon -->
@@ -158,7 +158,7 @@ function updateMouseLocation(e) {
           class="iconPercentageChart__chart-info chart-tooltip"
           :style="tooltipPosition"
         >
-          <h6>{{ targetData.name }}比例</h6>
+          <h6>{{ $t(targetData.name) }}{{ $t("比例") }}</h6>
           <span>{{ targetData.value }}％</span>
         </div>
       </Teleport>

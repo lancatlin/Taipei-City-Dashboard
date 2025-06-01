@@ -4,7 +4,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import VueApexCharts from "vue3-apexcharts";
-
+import { t } from "../../utils/i18n.js";
 const props = defineProps(["chart_config", "activeChart", "series"]);
 
 // const emits = defineEmits([
@@ -61,6 +61,9 @@ const chartOptions = ref({
 		markers: {
 			radius: [0, 20],
 		},
+		formatter: function (value) {
+			return t(value);
+		},
 	},
 	markers: {
 		hover: {
@@ -94,10 +97,10 @@ const chartOptions = ref({
 				`<div class="chart-tooltip">` +
 				`<h6>` +
 				`${parseTime(w.config.series[0].data[dataPointIndex].x)} - ${
-					w.globals.seriesNames[seriesIndex]
+					t(w.globals.seriesNames[seriesIndex])
 				}` +
 				`</h6>` +
-				`<span>${series[seriesIndex][dataPointIndex]} ${props.chart_config.unit}</span>` +
+				`<span>${t(series[seriesIndex][dataPointIndex])} ${t(props.chart_config.unit)}</span>` +
 				`</div>`
 			);
 		},
@@ -143,7 +146,7 @@ const chartOptions = ref({
 				},
 			},
 			title: {
-				text: props.series[0].name,
+				text: t(props.series[0].name),
 				style: {
 					color: "var(--color-complement-text)",
 				},
@@ -164,7 +167,7 @@ const chartOptions = ref({
 			},
 			opposite: true,
 			title: {
-				text: props.series?.[1]?.name ?? "",
+				text: t(props.series?.[1]?.name ?? ""),
 				style: {
 					color: "var(--color-complement-text)",
 				},
