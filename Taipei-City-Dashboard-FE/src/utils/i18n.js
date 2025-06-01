@@ -38,6 +38,7 @@ loadTranslations();
 // Translation function
 export function t(key) {
 	if (!key) return key;
+	if (!key.trim) return key;
 	const transformedKey = key.trim();
 	let value = translations[currentLanguage.value][transformedKey];
 	return value || key;

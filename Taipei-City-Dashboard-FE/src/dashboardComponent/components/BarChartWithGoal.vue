@@ -4,6 +4,7 @@
 <script setup>
 import { computed, ref } from "vue";
 import VueApexCharts from "vue3-apexcharts";
+import { t } from "../../utils/i18n.js";
 
 const props = defineProps([
 	"chart_config",
@@ -27,8 +28,8 @@ const parseSeries = computed(() => {
 
 	for (let i = 0; i < props.chart_config.categories.length; i++) {
 		const goalItem = {
-			name: "目標",
-			value: props.series[0].data[i] + props.series[1].data[i],
+			name: t("目標"),
+			value: t(props.series[0].data[i]) + t(props.series[1].data[i]),
 			strokeWidth: 4,
 			strokeColor: props.chart_config.color[1] || "#fff",
 		};
@@ -60,7 +61,7 @@ const chartOptions = ref({
 	legend: {
 		show: true,
 		showForSingleSeries: true,
-		customLegendItems: ["實際數值", "期望數值"],
+		customLegendItems: [t("實際數值"), t("期望數值")],
 		markers: {
 			fillColors: [
 				props.chart_config.color[0],
@@ -95,10 +96,10 @@ const chartOptions = ref({
 
 			return `
 			<div class="chart-tooltip">
-				<h6>${label}-實際數值</h6>
-				<span>${value} ${props.chart_config.unit}</span>
-				<h6>${label}-目標數值</h6>
-				<span>${goalValue} ${props.chart_config.unit}</span>
+				<h6>${t(label)}-${t("實際數值")}</h6>
+				<span>${t(value)} ${t(props.chart_config.unit)}</span>
+				<h6>${t(label)}-${t("目標數值")}</h6>
+				<span>${t(goalValue)} ${t(props.chart_config.unit)}</span>
 			</div>`;
 		},
 		followCursor: true,
@@ -118,7 +119,7 @@ const chartOptions = ref({
 	yaxis: {
 		labels: {
 			formatter: function (value) {
-				return value.length > 7 ? value.slice(0, 6) + "..." : value;
+				return t(value.length > 7 ? value.slice(0, 6) + "..." : value);
 			},
 		},
 	},

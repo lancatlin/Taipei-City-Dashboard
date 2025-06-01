@@ -2,6 +2,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import VueApexCharts from "vue3-apexcharts";
+import { t } from "../../utils/i18n.js";
 
 const props = defineProps([
 	"chart_config",
@@ -65,11 +66,11 @@ const chartOptions = ref({
 			return (
 				'<div class="chart-tooltip">' +
 				"<h6>" +
-				w.globals.labels[dataPointIndex] +
+				t(w.globals.labels[dataPointIndex]) +
 				"</h6>" +
 				"<span>" +
-				series[seriesIndex][dataPointIndex] +
-				` ${props.chart_config.unit}` +
+				t(series[seriesIndex][dataPointIndex]) +
+				` ${t(props.chart_config.unit)}` +
 				"</span>" +
 				"</div>"
 			);
@@ -91,7 +92,7 @@ const chartOptions = ref({
 	yaxis: {
 		labels: {
 			formatter: function (value) {
-				return value.length > 7 ? value.slice(0, 6) + "..." : value;
+				return t(value.length > 7 ? value.slice(0, 6) + "..." : value);
 			},
 		},
 	},

@@ -35,7 +35,7 @@ function handleOpenSettings() {
   <div class="settingsbar">
     <div class="settingsbar-title">
       <span>{{ contentStore.currentDashboard.icon }}</span>
-      <h2>{{ contentStore.currentDashboard.name }}</h2>
+      <h2>{{ $t( contentStore.currentDashboard.name ) }}</h2>
       <button
         class="show-if-mobile"
         @click="dialogStore.showDialog('mobileNavigation')"
@@ -54,7 +54,7 @@ function handleOpenSettings() {
       >
         <button @click="handleOpenSettings">
           <span>settings</span>
-          <p>設定</p>
+          <p>{{ $t('設定') }}</p>
         </button>
       </div>
       <AddEditDashboards />
@@ -71,7 +71,7 @@ function handleOpenSettings() {
       }"
       @click="dialogStore.showDialog('addPin')"
     >
-      {{ mapStore.tempMarkerCoordinates ? "新增地標" : "雙擊以建立地標" }}
+      {{ mapStore.tempMarkerCoordinates ? $t('新增地標') : $t('雙擊以建立地標') }}
     </button>
   </div>
   <AddViewPoint name="addPin" />
